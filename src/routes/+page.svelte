@@ -5,7 +5,7 @@
 	import * as Card from '$lib/components/ui/card';
 </script>
 
-<div class="m-4 h-screen flex flex-col items-center justify-center">
+<div class="m-4 flex h-screen flex-col items-center justify-center">
 	<h1 class="m-4">Hi Im Solymi</h1>
 
 	<Card.Root class="-my-4 w-full max-w-sm">
