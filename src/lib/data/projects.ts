@@ -47,7 +47,7 @@ export const projects: Project[] = [
   },
   {
     id: "spring-svelte-app",
-    title: "Spring Boot + Svelte Full-stack",
+    title: "Spring Boot + Svelte",
     description:
       "Spring Boot backend API with a Svelte frontend, session-based auth, and a clean endpoint structure.",
     tags: ["Java", "Spring Boot", "Svelte", "Auth"],

@@ -12,7 +12,7 @@
 				</h1>
 				<p class="mt-5 max-w-xl text-base opacity-80 sm:text-lg">
 					Focused on REST APIs and well-structured code. Java + Spring Boot with pragmatic
-					Svelte/Tailwind integration when needed. I build measurable, maintainable services
+					Svelte/Tailwind integration. I build measurable, maintainable services
 					designed to scale.
 				</p>
 

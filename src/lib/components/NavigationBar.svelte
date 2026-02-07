@@ -58,9 +58,8 @@
 			<a
 				class="rounded-lg border px-3 py-2 text-sm"
 				href="/cv/Solymosi%20Attila%20CV%20Eng.pdf"
-				download="Attila-Solymosi-CV.pdf"
 			>
-				Download CV
+				View CV
 			</a>
 			<button
 				class="rounded-lg border px-3 py-2 text-sm md:hidden"

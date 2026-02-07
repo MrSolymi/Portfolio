@@ -24,21 +24,21 @@
 
 <SectionTitle
 	eyebrow="About me"
-	title="Who I am"
+	title="Who am I?"
 	subtitle="A short summary of what I’m good at and how I work."
 />
 
 <div class="grid items-start gap-8 lg:grid-cols-2">
 	<!-- Left card -->
-	<div class="rounded-2xl border p-6">
+	<div class="rounded-2xl border p-6 shadow-xl">
 		<p class="text-sm opacity-80">
 			I’m Attila Solymosi, a software developer. I earned my BSc in Computer Science (Software
 			Engineering) at the University of Debrecen in 2025.<br /><br />
 			I focus primarily on building backend services with Spring Boot, and I enjoy delivering clean, reliable
 			APIs and maintainable architectures. On the frontend, I work with Svelte and TypeScript to create
 			fast, modern user experiences.<br /><br />
-			I’m also comfortable in the C#/.NET ecosystem—previously, I delivered a WPF desktop application
-			on a contract basis. Beyond professional work, I’m passionate about Unity game development in C#,
+			I’m also comfortable in the C# .NET ecosystem—previously, I delivered a WPF desktop application
+			on a contract basis. Beyond professional work, I’m passionate about Unity game development,
 			which also connects to my thesis work.
 		</p>
 
@@ -61,13 +61,13 @@
 	<!-- Right cards -->
 	<div class="grid gap-4">
 		{#each quick as q (q.title)}
-			<div class="rounded-2xl border p-6">
+			<div class="rounded-2xl border p-6 shadow-xl">
 				<p class="text-sm font-medium">{q.title}</p>
 				<p class="mt-2 text-sm opacity-80">{q.text}</p>
 			</div>
 		{/each}
 
-		<div class="rounded-2xl border p-6">
+		<div class="rounded-2xl border p-6 shadow-xl">
 			<p class="text-sm font-medium">Currently</p>
 			<p class="mt-2 text-sm opacity-80">
 				I’m open to backend or full-stack opportunities where I can build and improve reliable
