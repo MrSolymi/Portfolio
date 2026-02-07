@@ -5,8 +5,8 @@
 
 <SectionTitle
 	eyebrow="Education"
-	title="Tanulmányok"
-	subtitle="Egyetem és releváns képzések röviden, a fókuszpontokkal."
+	title="Education"
+	subtitle="University and other relevant educational experiences."
 />
 
 <div class="relative">

@@ -1,12 +1,12 @@
 <script lang="ts">
 	const items = [
-		{ id: 'about', label: 'Rólam' },
-		{ id: 'projects', label: 'Projektek' },
-		{ id: 'experience', label: 'Tapasztalat' },
-        { id: 'education', label: 'Tanulmányok' },
-		{ id: 'skills', label: 'Skillek' },
-        { id: "certifications", label: "Certifikátok" },
-		{ id: 'contact', label: 'Kapcsolat' }
+		{ id: 'about', label: 'About me' },
+		{ id: 'projects', label: 'Projects' },
+		{ id: 'experience', label: 'Experience' },
+        { id: 'education', label: 'My education' },
+		{ id: 'skills', label: 'Skills' },
+        { id: "certifications", label: "Certifications" },
+		{ id: 'contact', label: 'Contact' }
 	];
 
 	let activeId = 'about';
@@ -40,7 +40,7 @@
 
 <header class="sticky top-0 z-50 border-b backdrop-blur">
 	<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-		<a href="/" class="font-semibold tracking-tight">Solymosi Attila</a>
+		<a href="/" class="font-semibold tracking-tight">Attila Solymosi</a>
 
 		<div class="hidden items-center gap-1 md:flex">
 			{#each items as item}
@@ -57,7 +57,7 @@
 		<div class="flex items-center gap-2">
 			<a
 				class="rounded-lg border px-3 py-2 text-sm"
-				href="/cv.pdf"
+				href="/cv"
 				target="_blank"
 				rel="noreferrer"
 			>

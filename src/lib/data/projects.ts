@@ -22,38 +22,38 @@ export const projects: Project[] = [
     id: "contact-manager",
     title: "ContactManager",
     description:
-      "WPF alkalmazás email-ekből kontaktok kinyerésére, tárolására és felülvizsgálatára (MVVM, SQLite).",
+      "A WPF desktop app to extract, store, and review contacts from emails (MVVM, SQLite).",
     tags: ["WPF", "C#", "SQLite", "MVVM"],
     highlights: [
-      "Regex alapú kontakt kinyerés + deduplikáció",
-      "Szűrők, DataGrid UX, státusz mezők",
-      "Google Cloud OAuth integráció (Gmail)",
+      "Regex-based contact extraction with deduplication",
+      "Filters, DataGrid UX, and review/status fields for a smooth workflow",
+      "Google OAuth 2.0 integration (Gmail)",
     ],
     links: { repo: "https://github.com/...", caseStudy: true },
     caseStudy: {
       problem:
-        "Kontaktok manuális kinyerése emailekből lassú és hibára hajlamos volt; kellett egy gyors, review-központú workflow.",
+        "Manually extracting contacts from emails was slow and error-prone — a fast, review-first workflow was needed.",
       solution: [
-        "MVVM architektúra + jól skálázható UI state",
-        "SQLite + EF Core / repository jellegű adatkezelés",
-        "Import pipeline: email → regex parsing → normalizálás → deduplikáció",
+        "MVVM architecture with scalable UI state management",
+        "SQLite + EF Core with a repository-style data layer for clean separation and testability",
+        "Import pipeline: email → regex parsing → normalization → deduplication",
       ],
       results: [
-        "Gyorsabb feldolgozás és egységes review folyamat",
-        "Kereshető/szűrhető adatbázis, tiszta auditálhatóság",
+        "Faster processing with a consistent review workflow",
+        "Searchable/filterable database with clean auditability",
       ],
-      stack: ["C#", "WPF", "MVVM", "SQLite", "Google OAuth"],
+      stack: ["C#", "WPF", "MVVM", "SQLite", "Google OAuth 2.0"],
     },
   },
   {
     id: "spring-svelte-app",
     title: "Spring Boot + Svelte Full-stack",
     description:
-      "Spring Boot backend API + Svelte frontend, session alapú auth és tiszta endpoint struktúra.",
+      "Spring Boot backend API with a Svelte frontend, session-based auth, and a clean endpoint structure.",
     tags: ["Java", "Spring Boot", "Svelte", "Auth"],
     highlights: [
-      "Session-based authentication",
-      "REST API design + validáció"
+      "Session-based authentication with secure password handling and auth flow design",
+      "REST API design + validation, error handling, and a clean endpoint structure"
     ],
     // links: { repo: "https://github.com/...", live: "https://..." },
     links: { repo: "https://github.com/..." },

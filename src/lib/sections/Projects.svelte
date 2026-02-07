@@ -31,7 +31,7 @@
 
 <SectionTitle
 	eyebrow="Work"
-	title="Projektek"
+	title="Projects"
 	subtitle="Néhány kiemelt munka — kattints a case study-ra, ha szeretnéd látni a megközelítést és döntéseket."
 />
 

@@ -1,15 +1,15 @@
 export const skills = [
   {
     title: "Backend",
-    items: ["Java", "Spring Boot", "REST", "Validation", "Security", "Session/Auth", "Testing"]
+    items: ["Java", "Spring Boot", "REST", "Validation", "Session/Auth"]
   },
   {
     title: "Frontend",
-    items: ["Svelte", "TypeScript", "Tailwind UI (theme)", "SPA/SSR basics"]
+    items: ["Svelte", "TypeScript", "Tailwind UI (theme)"]
   },
   {
     title: "Database",
-    items: ["PostgreSQL", "SQLite", "SQL", "ORM basics", "Migrations"]
+    items: ["PostgreSQL", "SQLite", "SQL"]
   },
   {
     title: "DevOps & Tools",
@@ -19,7 +19,7 @@ export const skills = [
 
 export const contact = {
   location: "Hungary",
-  email: "you@email.com",
-  github: "https://github.com/...",
-  linkedin: "https://linkedin.com/in/..."
+  email: "solymosiati001220@outlook.hu",
+  github: "https://github.com/MrSolymi",
+  linkedin: "https://www.linkedin.com/in/mrsolymi"
 };

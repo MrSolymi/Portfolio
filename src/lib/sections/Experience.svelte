@@ -5,8 +5,8 @@
 
 <SectionTitle
 	eyebrow="Career"
-	title="Tapasztalat"
-	subtitle="Rövid timeline a fontosabb projektekből / szerepekből, fókuszban az eredményekkel."
+	title="Experience"
+	subtitle="Short timeline of the most important projects / roles, with focus on results."
 />
 
 <div class="relative">

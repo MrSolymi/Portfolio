@@ -47,21 +47,21 @@
 
 	<footer class="border-t py-10">
 		<Container className="flex flex-col sm:flex-row items-center justify-between gap-4 opacity-80">
-			<p class="text-sm">© {new Date().getFullYear()} Solymosi Attila</p>
+			<p class="text-sm">© {new Date().getFullYear()} Attila Solymosi</p>
 			<div class="flex gap-4 text-sm">
 				<a
 					class="opacity-80 hover:opacity-100"
-					href="https://github.com/"
+					href="https://github.com/MrSolymi"
 					target="_blank"
 					rel="noreferrer">GitHub</a
 				>
 				<a
 					class="opacity-80 hover:opacity-100"
-					href="https://linkedin.com/"
+					href="https://linkedin.com/in/mrsolymi"
 					target="_blank"
 					rel="noreferrer">LinkedIn</a
 				>
-				<a class="opacity-80 hover:opacity-100" href="mailto:you@email.com">Email</a>
+				<a class="opacity-80 hover:opacity-100" href="mailto:solymosiati001220@outlook.hu">Email</a>
 			</div>
 		</Container>
 	</footer>
