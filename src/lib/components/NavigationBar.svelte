@@ -58,6 +58,8 @@
 			<a
 				class="rounded-lg border px-3 py-2 text-sm"
 				href="/cv/Solymosi%20Attila%20CV%20Eng.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
 			>
 				View CV
 			</a>
