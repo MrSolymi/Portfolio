@@ -2,8 +2,8 @@
 	const items = [
 		{ id: 'about', label: 'About me' },
 		{ id: 'projects', label: 'Projects' },
-		{ id: 'experience', label: 'Experience' },
 		{ id: 'education', label: 'My education' },
+		{ id: 'experience', label: 'Experience' },
 		{ id: 'skills', label: 'Skills' },
 		{ id: 'certifications', label: 'Certifications' },
 		{ id: 'contact', label: 'Contact' }
