@@ -3,9 +3,9 @@
 		{ id: 'about', label: 'About me' },
 		{ id: 'projects', label: 'Projects' },
 		{ id: 'experience', label: 'Experience' },
-        { id: 'education', label: 'My education' },
+		{ id: 'education', label: 'My education' },
 		{ id: 'skills', label: 'Skills' },
-        { id: "certifications", label: "Certifications" },
+		{ id: 'certifications', label: 'Certifications' },
 		{ id: 'contact', label: 'Contact' }
 	];
 
@@ -57,9 +57,8 @@
 		<div class="flex items-center gap-2">
 			<a
 				class="rounded-lg border px-3 py-2 text-sm"
-				href="/cv"
-				target="_blank"
-				rel="noreferrer"
+				href="/cv/Solymosi%20Attila%20CV%20Eng.pdf"
+				download="Attila-Solymosi-CV.pdf"
 			>
 				Download CV
 			</a>
