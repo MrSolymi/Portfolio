@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onDestroy, onMount, tick } from "svelte";
+
 	const items = [
 		{ id: 'about', label: 'About me' },
 		{ id: 'projects', label: 'Projects' },
@@ -10,6 +12,7 @@
 	];
 
 	let activeId = 'about';
+	let cleanup: null | (() => void) = null;
 
 	function setupObserver() {
 		const sections = items
@@ -31,22 +34,44 @@
 	}
 
 	function scrollTo(id: string) {
+		//activeId = id;
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 
-	let cleanup: null | (() => void) = null;
-	$: if (typeof window !== 'undefined' && !cleanup) cleanup = setupObserver();
+	onMount(async () => {
+		await tick(); // megvárja, míg a page DOM felépül
+		cleanup = setupObserver();
+	});
+
+	onDestroy(() => cleanup?.());
 </script>
 
 <header class="sticky top-0 z-50 border-b backdrop-blur">
 	<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<a href="/" class="font-semibold tracking-tight">Attila Solymosi</a>
 
+		<!--
 		<div class="hidden items-center gap-1 md:flex">
 			{#each items as item}
 				<button
 					class={'rounded-lg px-3 py-2 text-sm transition ' +
 						(activeId === item.id ? 'opacity-100' : 'opacity-70 hover:opacity-100')}
+					on:click={() => scrollTo(item.id)}
+				>
+					{item.label}
+				</button>
+			{/each}
+		</div>
+		-->
+
+		<div class="hidden items-center gap-1 md:flex">
+			{#each items as item}
+				<button
+					class={'rounded-lg px-3 py-2 text-sm transition ' +
+						(activeId === item.id
+							? 'text-[15px] font-semibold underline underline-offset-8 opacity-100'
+							: 'opacity-70 hover:opacity-100')}
+					aria-current={activeId === item.id ? 'page' : undefined}
 					on:click={() => scrollTo(item.id)}
 				>
 					{item.label}

@@ -66,7 +66,8 @@
 	>
 		<button class="absolute inset-0 opacity-60" aria-label="Close" on:click={close}></button>
 
-		<div class="relative w-full max-w-3xl rounded-2xl border p-6 backdrop-blur sm:p-8">
+		<!--bg-background-->
+		<div class="relative w-full max-w-3xl rounded-2xl border p-6  backdrop-blur-md sm:p-8">
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<h3 class="text-xl font-semibold tracking-tight">{selected.title}</h3>

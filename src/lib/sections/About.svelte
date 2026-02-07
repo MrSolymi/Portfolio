@@ -37,7 +37,7 @@
 			I focus primarily on building backend services with Spring Boot, and I enjoy delivering clean, reliable
 			APIs and maintainable architectures. On the frontend, I work with Svelte and TypeScript to create
 			fast, modern user experiences.<br /><br />
-			I’m also comfortable in the C# .NET ecosystem—previously, I delivered a WPF desktop application
+			I’m also comfortable in the C# .NET ecosystem. Previously, I delivered a WPF desktop application
 			on a contract basis. Beyond professional work, I’m passionate about Unity game development,
 			which also connects to my thesis work.
 		</p>
