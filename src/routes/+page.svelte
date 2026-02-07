@@ -1,43 +1,68 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
-	import * as Card from '$lib/components/ui/card';
+	import Navbar from '$lib/components/NavigationBar.svelte';
+	import Container from '$lib/components/Container.svelte';
+
+	import Hero from '$lib/sections/Hero.svelte';
+	import About from '$lib/sections/About.svelte';
+	import Projects from '$lib/sections/Projects.svelte';
+	import Experience from '$lib/sections/Experience.svelte';
+	import Education from '$lib/sections/Education.svelte';
+	import Skills from '$lib/sections/Skills.svelte';
+	import Certifications from '$lib/sections/Certifications.svelte';
+	import Contact from '$lib/sections/Contact.svelte';
 </script>
 
-<div class="m-4 flex h-screen flex-col items-center justify-center">
-	<h1 class="m-4">Hi Im Solymi :DDDD</h1>
+<Navbar />
 
-	<Card.Root class="-my-4 w-full max-w-sm">
-		<Card.Header>
-			<Card.Title>Login to your account</Card.Title>
-			<Card.Description>Enter your email below to login to your account</Card.Description>
-			<Card.Action>
-				<Button variant="link">Sign Up</Button>
-			</Card.Action>
-		</Card.Header>
-		<Card.Content>
-			<form>
-				<div class="flex flex-col gap-6">
-					<div class="grid gap-2">
-						<Label for="email">Email</Label>
-						<Input id="email" type="email" placeholder="m@example.com" required />
-					</div>
-					<div class="grid gap-2">
-						<div class="flex items-center">
-							<Label for="password">Password</Label>
-							<a href="##" class="ms-auto inline-block text-sm underline-offset-4 hover:underline">
-								Forgot your password?
-							</a>
-						</div>
-						<Input id="password" type="password" required />
-					</div>
-				</div>
-			</form>
-		</Card.Content>
-		<Card.Footer class="flex-col gap-2">
-			<Button type="submit" class="w-full">Login</Button>
-			<Button variant="outline" class="w-full">Login with Google</Button>
-		</Card.Footer>
-	</Card.Root>
-</div>
+<main class="min-h-screen">
+	<Hero />
+
+	<section id="about" class="py-20">
+		<Container><About /></Container>
+	</section>
+
+	<section id="projects" class="border-t py-20">
+		<Container><Projects /></Container>
+	</section>
+
+	<section id="education" class="border-t py-20">
+		<Container><Education /></Container>
+	</section>
+
+	<section id="experience" class="border-t py-20">
+		<Container><Experience /></Container>
+	</section>
+
+	<section id="skills" class="border-t py-20">
+		<Container><Skills /></Container>
+	</section>
+
+	<section id="certifications" class="border-t py-20">
+		<Container><Certifications /></Container>
+	</section>
+
+	<section id="contact" class="border-t py-20">
+		<Container><Contact /></Container>
+	</section>
+
+	<footer class="border-t py-10">
+		<Container className="flex flex-col sm:flex-row items-center justify-between gap-4 opacity-80">
+			<p class="text-sm">© {new Date().getFullYear()} Solymosi Attila</p>
+			<div class="flex gap-4 text-sm">
+				<a
+					class="opacity-80 hover:opacity-100"
+					href="https://github.com/"
+					target="_blank"
+					rel="noreferrer">GitHub</a
+				>
+				<a
+					class="opacity-80 hover:opacity-100"
+					href="https://linkedin.com/"
+					target="_blank"
+					rel="noreferrer">LinkedIn</a
+				>
+				<a class="opacity-80 hover:opacity-100" href="mailto:you@email.com">Email</a>
+			</div>
+		</Container>
+	</footer>
+</main>
