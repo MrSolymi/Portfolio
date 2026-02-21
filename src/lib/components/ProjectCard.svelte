@@ -5,7 +5,7 @@
   export let onOpenCaseStudy: ((p: Project) => void) | null = null;
 </script>
 
-<article class="group rounded-2xl border p-6 transition hover:-translate-y-0.5">
+<article class=" glass group rounded-2xl border-2 p-6 transition hover:-translate-y-0.5">
   <header class="flex items-start justify-between gap-4">
     <div>
       <h3 class="text-lg font-semibold tracking-tight">{project.title}</h3>
@@ -15,14 +15,14 @@
 
   <div class="mt-4 flex flex-wrap gap-2">
     {#each project.tags as tag}
-      <span class="text-xs px-2.5 py-1 rounded-full border opacity-80">{tag}</span>
+      <span class="glass text-xs px-2.5 py-1 rounded-full border opacity-80">{tag}</span>
     {/each}
   </div>
 
   <ul class="mt-5 space-y-2">
     {#each project.highlights.slice(0, 3) as h}
       <li class="text-sm opacity-80 flex gap-2">
-        <span class="mt-2 h-1.5 w-1.5 rounded-full border shrink-0"></span>
+        <span class="brighter-border mt-2 h-1.5 w-1.5 rounded-full border shrink-0"></span>
         <span>{h}</span>
       </li>
     {/each}
@@ -42,7 +42,7 @@
 
     {#if project.links?.caseStudy && onOpenCaseStudy}
       <button
-        class="text-sm underline opacity-80 hover:opacity-100"
+        class="cursor-pointer text-sm underline opacity-80 hover:opacity-100"
         type="button"
         on:click={() => onOpenCaseStudy?.(project)}
       >

@@ -25,19 +25,19 @@
 />
 
 <div class="grid gap-8 lg:grid-cols-2">
-	<div class="rounded-2xl border p-6">
+	<div class="glass rounded-2xl border-2 p-6">
 		<p class="text-sm opacity-80">
 			The fastest way to reach me is via email. I also respond on LinkedIn.
 		</p>
 
 		<div class="mt-6 space-y-4 text-sm">
-			<div class="flex items-center justify-between gap-3 rounded-xl border p-4">
+			<div class="glass flex items-center justify-between gap-3 rounded-xl border p-4">
 				<span class="opacity-70">Location</span>
 				<span class="font-medium">{contact.location}</span>
 			</div>
 
 			<a
-				class="flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
+				class="btn-glass flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
 				href={'mailto:' + contact.email}
 			>
 				<span class="opacity-70">Email</span>
@@ -45,7 +45,7 @@
 			</a>
 
 			<a
-				class="flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
+				class="btn-glass flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
 				href={contact.github}
 				target="_blank"
 				rel="noreferrer"
@@ -55,7 +55,7 @@
 			</a>
 
 			<a
-				class="flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
+				class="btn-glass flex items-center justify-between gap-3 rounded-xl border p-4 opacity-90 hover:opacity-100"
 				href={contact.linkedin}
 				target="_blank"
 				rel="noreferrer"
@@ -65,15 +65,15 @@
 			</a>
 		</div>
 
-		<div class="mt-6 rounded-2xl border p-5">
+		<div class="glass mt-6 rounded-2xl border p-5">
 			<p class="text-sm font-medium">Availability</p>
 			<p class="mt-2 text-sm opacity-80">
-				Open to backend / full-stack roles. Remote vagy hibrid is oké.
+				Open to backend / full-stack roles. Remote or hybrid could work too.
 			</p>
 		</div>
 	</div>
 
-	<form class="rounded-2xl border p-6" on:submit|preventDefault={submit}>
+	<form class="glass rounded-2xl border-2 p-6" on:submit|preventDefault={submit}>
 		<div class="grid gap-4">
 			<label class="grid gap-2">
 				<span class="text-sm opacity-80">Name</span>
@@ -102,13 +102,13 @@
 				></textarea>
 			</label>
 
-			<button class="rounded-xl border px-4 py-2.5 text-sm font-medium" type="submit">
+			<button class="btn-glass cursor-pointer rounded-xl border px-4 py-2.5 text-sm font-medium" type="submit">
 				Send message
 			</button>
 
 			{#if sent}
 				<p class="text-sm opacity-80">
-					✅ Message “sent” (UI demo). Később rákötjük backend/emailre.
+					✅ Message “sent” (UI demo).
 				</p>
 			{/if}
 		</div>

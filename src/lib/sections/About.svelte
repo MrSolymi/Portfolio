@@ -30,7 +30,7 @@
 
 <div class="grid items-start gap-8 lg:grid-cols-2">
 	<!-- Left card -->
-	<div class="rounded-2xl border p-6 shadow-xl">
+	<div class="glass rounded-2xl border-2 p-6 shadow-xl">
 		<p class="text-sm opacity-80">
 			I’m Attila Solymosi, a software developer. I earned my BSc in Computer Science (Software
 			Engineering) at the University of Debrecen in 2025.<br /><br />
@@ -38,36 +38,36 @@
 			APIs and maintainable architectures. On the frontend, I work with Svelte and TypeScript to create
 			fast, modern user experiences.<br /><br />
 			I’m also comfortable in the C# .NET ecosystem. Previously, I delivered a WPF desktop application
-			on a contract basis. Beyond professional work, I’m passionate about Unity game development,
-			which also connects to my thesis work.
+			on a contract basis. Beyond professional work, I’m passionate about Unity game development, which
+			also connects to my thesis work.
 		</p>
 
 		<ul class="mt-5 space-y-2">
 			{#each bullets as b}
 				<li class="flex gap-2 text-sm opacity-85">
-					<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
+					<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
 					<span>{b}</span>
 				</li>
 			{/each}
 		</ul>
 
 		<div class="mt-6 flex flex-wrap gap-2">
-			<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">Open to work</span>
-			<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">Backend / Full-stack</span>
-			<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">Debrecen / Remote</span>
+			<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">Open to work</span>
+			<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">Backend / Full-stack</span>
+			<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">Debrecen / Remote</span>
 		</div>
 	</div>
 
 	<!-- Right cards -->
 	<div class="grid gap-4">
 		{#each quick as q (q.title)}
-			<div class="rounded-2xl border p-6 shadow-xl">
+			<div class="glass rounded-2xl border-2 p-6 shadow-xl">
 				<p class="text-sm font-medium">{q.title}</p>
 				<p class="mt-2 text-sm opacity-80">{q.text}</p>
 			</div>
 		{/each}
 
-		<div class="rounded-2xl border p-6 shadow-xl">
+		<div class="glass rounded-2xl border-2 p-6 shadow-xl">
 			<p class="text-sm font-medium">Currently</p>
 			<p class="mt-2 text-sm opacity-80">
 				I’m open to backend or full-stack opportunities where I can build and improve reliable

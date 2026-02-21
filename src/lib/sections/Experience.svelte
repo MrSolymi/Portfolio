@@ -10,18 +10,21 @@
 />
 
 <div class="relative">
-	<!-- bal oldali függőleges vonal desktopon -->
-	<div class="absolute top-0 bottom-0 left-3 hidden w-px border-l sm:block"></div>
+	<!-- FOLYTONOS VONAL -->
+	<div class="brighter-border absolute top-0 bottom-0 left-3.25 hidden w-px border sm:block"></div>
 
 	<div class="space-y-6">
 		{#each experience as item (item.id)}
-			<article class="relative sm:pl-12">
-				<!-- pont -->
-				<div class="absolute top-6 left-0 hidden h-6 w-6 items-center justify-center sm:flex">
-					<span class="h-3 w-3 rounded-full border"></span>
+			<article class="grid items-start gap-6 sm:grid-cols-[28px_1fr]">
+				<!-- Bal oszlop: csak a pont -->
+				<div class="relative hidden sm:block">
+					<span
+						class="brighter-border absolute top-8 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border-2"
+					></span>
 				</div>
 
-				<div class="rounded-2xl border p-6">
+				<!-- Jobb oszlop: kártya -->
+				<div class="glass border-2 rounded-2xl p-6">
 					<header class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 						<div>
 							<h3 class="text-lg font-semibold tracking-tight">{item.title}</h3>
@@ -59,7 +62,7 @@
 							<ul class="mt-3 space-y-2">
 								{#each item.achievements as a}
 									<li class="flex gap-2 text-sm opacity-85">
-										<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
+										<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
 										<span>{a}</span>
 									</li>
 								{/each}
@@ -70,7 +73,7 @@
 							<p class="text-sm font-medium opacity-70">Stack</p>
 							<div class="mt-3 flex flex-wrap gap-2">
 								{#each item.stack as s}
-									<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">{s}</span>
+									<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">{s}</span>
 								{/each}
 							</div>
 						</section>

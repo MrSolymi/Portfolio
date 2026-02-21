@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 9%);
-  --primary: hsl(263 70% 35%);
+  --background: hsl(240 10% 6%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(240 10% 10%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(240 10% 10%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(255 85% 65%);
   --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(263 20% 95%);
   --secondary-foreground: hsl(263 70% 35%);
@@ -19,9 +17,9 @@
   --accent-foreground: hsl(263 70% 30%);
   --destructive: hsl(0 72% 51%);
   --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(0 0% 90%);
-  --input: hsl(0 0% 90%);
-  --ring: hsl(263 70% 35%);
+  --border: hsl(250 25% 22%);
+  --input: hsl(250 25% 22%);
+  --ring: hsl(255 85% 65%);
   --chart-1: hsl(263 70% 35%);
   --chart-2: hsl(263 50% 50%);
   --chart-3: hsl(263 40% 65%);
@@ -36,41 +34,6 @@
   --sidebar-accent-foreground: hsl(263 70% 35%);
   --sidebar-border: hsl(0 0% 90%);
   --sidebar-ring: hsl(263 70% 35%);
-}
-
-.dark {
-  --background: hsl(0 0% 4%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(0 0% 7%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(0 0% 7%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(263 70% 58%);
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(0 0% 15%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(0 0% 15%);
-  --muted-foreground: hsl(0 0% 65%);
-  --accent: hsl(263 40% 20%);
-  --accent-foreground: hsl(263 70% 75%);
-  --destructive: hsl(0 62% 50%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(0 0% 18%);
-  --input: hsl(0 0% 18%);
-  --ring: hsl(263 70% 58%);
-  --chart-1: hsl(263 70% 58%);
-  --chart-2: hsl(263 55% 68%);
-  --chart-3: hsl(263 45% 78%);
-  --chart-4: hsl(280 55% 60%);
-  --chart-5: hsl(250 55% 60%);
-  --sidebar-background: hsl(0 0% 7%);
-  --sidebar-foreground: hsl(0 0% 98%);
-  --sidebar-primary: hsl(263 70% 58%);
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(0 0% 15%);
-  --sidebar-accent-foreground: hsl(0 0% 98%);
-  --sidebar-border: hsl(0 0% 18%);
-  --sidebar-ring: hsl(263 70% 58%);
 }
 
 @theme inline {
@@ -117,5 +80,69 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url('/background/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: translateZ(0);
+  }
+}
+
+@layer utilities {
+  .glass-lite {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  .glass-soft {
+    @apply border border-white/8 bg-white/3 backdrop-blur-xl;
+  }
+
+  .glass {
+    @apply backdrop-blur-xl;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.40);
+    background: color-mix(in oklab, var(--primary) 4%, transparent);
+  }
+
+  .btn-glass {
+    @apply backdrop-blur-xl;
+    border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+    background: color-mix(in oklab, var(--primary) 10%, transparent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.30);
+  }
+
+  .btn-glass:hover {
+    background: color-mix(in oklab, var(--primary) 16%, transparent);
+  }
+
+  .btn-glass:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 3px color-mix(in oklab, var(--primary) 40%, transparent),
+      0 12px 28px rgba(0,0,0,0.35);
+  }
+
+  .btn-primary {
+    @apply transition;
+    background: color-mix(in oklab, var(--primary) 55%, black 45%);
+    border: 1px solid color-mix(in oklab, var(--primary) 70%, transparent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.30);
+  }
+
+  .btn-primary:hover {
+    background: color-mix(in oklab, var(--primary) 65%, black 35%);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  }
+
+  .brighter-border {
+    border-color: color-mix(in oklab, var(--primary) 55%, transparent);
   }
 }

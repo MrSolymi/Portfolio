@@ -11,7 +11,7 @@
 
 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 	{#each certifications as c (c.id)}
-		<article class="rounded-2xl border p-6">
+		<article class="glass rounded-2xl border-2 p-6">
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<h3 class="text-base font-semibold tracking-tight">{c.name}</h3>
@@ -23,7 +23,7 @@
 			{#if c.tags?.length}
 				<div class="mt-4 flex flex-wrap gap-2">
 					{#each c.tags as t}
-						<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
+						<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
 					{/each}
 				</div>
 			{/if}

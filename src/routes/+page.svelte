@@ -17,31 +17,31 @@
 <main class="min-h-screen">
 	<Hero />
 
-	<section id="about" class="py-20">
+	<section id="about" class="scroll-mt-14 py-20">
 		<Container><About /></Container>
 	</section>
 
-	<section id="projects" class="border-t py-20">
+	<section id="projects" class="scroll-mt-14 py-20">
 		<Container><Projects /></Container>
 	</section>
 
-	<section id="education" class="border-t py-20">
+	<section id="education" class="scroll-mt-14 py-20">
 		<Container><Education /></Container>
 	</section>
 
-	<section id="experience" class="border-t py-20">
+	<section id="experience" class="scroll-mt-14 py-20">
 		<Container><Experience /></Container>
 	</section>
 
-	<section id="skills" class="border-t py-20">
+	<section id="skills" class="scroll-mt-14 py-20">
 		<Container><Skills /></Container>
 	</section>
 
-	<section id="certifications" class="border-t py-20">
+	<section id="certifications" class="scroll-mt-14 py-20">
 		<Container><Certifications /></Container>
 	</section>
 
-	<section id="contact" class="border-t py-20">
+	<section id="contact" class="scroll-mt-14 py-20">
 		<Container><Contact /></Container>
 	</section>
 

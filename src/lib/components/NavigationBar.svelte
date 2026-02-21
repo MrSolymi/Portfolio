@@ -67,7 +67,7 @@
 		<div class="hidden items-center gap-1 md:flex">
 			{#each items as item}
 				<button
-					class={'rounded-lg px-3 py-2 text-sm transition ' +
+					class={'cursor-pointer rounded-lg px-3 py-2 text-sm transition ' +
 						(activeId === item.id
 							? 'text-[15px] font-semibold underline underline-offset-8 opacity-100'
 							: 'opacity-70 hover:opacity-100')}
@@ -81,7 +81,7 @@
 
 		<div class="flex items-center gap-2">
 			<a
-				class="rounded-lg border px-3 py-2 text-sm"
+				class="btn-primary rounded-lg border px-3 py-2 text-sm"
 				href="/cv/Solymosi%20Attila%20CV%20Eng.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -89,7 +89,7 @@
 				View CV
 			</a>
 			<button
-				class="rounded-lg border px-3 py-2 text-sm md:hidden"
+				class="btn-glass rounded-lg border px-3 py-2 text-sm md:hidden"
 				on:click={() => scrollTo('projects')}
 			>
 				Projects
