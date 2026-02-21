@@ -97,7 +97,7 @@
 					<ul class="mt-3 space-y-2">
 						{#each selected.caseStudy.solution as s}
 							<li class="flex gap-2 text-sm opacity-85">
-								<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full border brighter-border"></span>
+								<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
 								<span>{s}</span>
 							</li>
 						{/each}
@@ -109,7 +109,7 @@
 					<ul class="mt-3 space-y-2">
 						{#each selected.caseStudy.results as r}
 							<li class="flex gap-2 text-sm opacity-85">
-								<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
+								<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
 								<span>{r}</span>
 							</li>
 						{/each}
