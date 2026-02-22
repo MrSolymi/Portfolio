@@ -146,3 +146,7 @@
     border-color: color-mix(in oklab, var(--primary) 55%, transparent);
   }
 }
+
+html {
+  scrollbar-gutter: stable;
+}
