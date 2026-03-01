@@ -36,7 +36,7 @@
 		<button
 			type="button"
 			class={'cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ' +
-				(active === f ? 'opacity-100 btn-primary' : 'btn-glass opacity-70 hover:opacity-100')}
+				(active === f ? 'btn-primary opacity-100' : 'btn-glass opacity-70 hover:opacity-100')}
 			on:click={() => (active = f)}
 		>
 			{f}
@@ -54,7 +54,7 @@
 <Dialog.Root {open} onOpenChange={handleOpenChange}>
 	<Dialog.Portal>
 		<Dialog.Content
-			class="glass z-50 w-[min(800px,calc(100vw-2rem))] max-w-none rounded-2xl border-2 p-6 backdrop-blur-lg sm:max-w-none sm:p-8 max-h-[85vh] overflow-y-auto overscroll-contain"
+			class="glass z-50 max-h-[85vh] w-[min(800px,calc(100vw-2rem))] max-w-none overflow-y-auto overscroll-contain rounded-2xl border-2 p-6 backdrop-blur-lg sm:max-w-none sm:p-8"
 		>
 			{#if selected?.caseStudy}
 				<div class="flex items-start justify-between gap-4">
@@ -106,11 +106,13 @@
 					</section>
 				</div>
 
+				<!--
 				<div class="flex items-start justify-end gap-4">
 					<Dialog.Close class="btn-primary cursor-pointer rounded-xl border px-3 py-2 text-sm">
 						Close
 					</Dialog.Close>
 				</div>
+				-->
 			{/if}
 		</Dialog.Content>
 	</Dialog.Portal>
