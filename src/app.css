@@ -96,14 +96,7 @@
 		background-repeat: no-repeat;
   
 
-		filter: blur(0px) contrast(0.95) saturate(1.65);
-	}
-	
-
-	@supports (height: 100svh) {
-		body::before {
-			height: 100svh;
-		}
+		filter: blur(1px) contrast(0.95) saturate(1.65);
 	}
 }
 
