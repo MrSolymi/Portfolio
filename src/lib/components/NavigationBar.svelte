@@ -46,7 +46,7 @@
 	onDestroy(() => cleanup?.());
 </script>
 
-<header class="sticky top-0 z-50 border-b backdrop-blur">
+<header class="sticky top-0 z-50 border-b backdrop-blur bg-black/30">
 	<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<a href="/" class="font-semibold tracking-tight">Attila Solymosi</a>
 

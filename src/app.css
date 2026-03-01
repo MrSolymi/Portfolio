@@ -81,17 +81,20 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	body::before {
+	#bg {
 		content: '';
 		position: fixed;
 		inset: 0;
-		z-index: -2;
+		z-index: -1;
 
 		background-image: url('/background/bg3.png');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+
+		filter: blur(0px) contrast(0.95) saturate(1.65);
 	}
+	
 
 	@supports (height: 100svh) {
 		body::before {

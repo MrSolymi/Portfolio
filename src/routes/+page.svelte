@@ -42,7 +42,7 @@
 		<Container><Contact /></Container>
 	</section>
 
-	<footer class="border-t backdrop-blur py-10 max-sm:py-5">
+	<footer class="border-t backdrop-blur py-10 max-sm:py-5 bg-black/30">
 		<Container className="flex flex-col sm:flex-row items-center justify-between gap-4 opacity-80">
 			<p class="text-sm">© {new Date().getFullYear()} Attila Solymosi</p>
 			<div class="flex gap-4 text-sm">
