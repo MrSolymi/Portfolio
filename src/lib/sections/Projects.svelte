@@ -31,20 +31,22 @@
 	subtitle="A few projects worth mentioning. Click on the case study to see the approach and details."
 />
 
-<div class="mb-8 flex flex-wrap gap-2">
-	{#each filters as f}
-		<button
-			type="button"
-			class={'cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ' +
-				(active === f ? 'btn-primary opacity-100' : 'btn-glass opacity-70 hover:opacity-100')}
-			on:click={() => (active = f)}
-		>
-			{f}
-		</button>
-	{/each}
+<div class="-mx-4 mb-6 overflow-x-auto px-4 sm:mx-0 sm:mb-8 sm:px-0">
+	<div class="flex gap-2 whitespace-nowrap">
+		{#each filters as f}
+			<button
+				type="button"
+				class={'cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ' +
+					(active === f ? 'btn-primary opacity-100' : 'btn-glass opacity-70 hover:opacity-100')}
+				on:click={() => (active = f)}
+			>
+				{f}
+			</button>
+		{/each}
+	</div>
 </div>
 
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
 	{#each visible as p (p.id)}
 		<ProjectCard project={p} onOpenCaseStudy={openCaseStudy} />
 	{/each}
@@ -54,7 +56,7 @@
 <Dialog.Root {open} onOpenChange={handleOpenChange}>
 	<Dialog.Portal>
 		<Dialog.Content
-			class="glass z-50 max-h-[85vh] w-[min(800px,calc(100vw-2rem))] max-w-none overflow-y-auto overscroll-contain rounded-2xl border-2 p-6 backdrop-blur-lg sm:max-w-none sm:p-8"
+			class="glass z-50 max-h-[85vh] w-[min(800px,calc(100vw-2rem))] max-w-none overflow-y-auto overscroll-contain rounded-2xl border-2 p-4 backdrop-blur-lg sm:p-8"
 		>
 			{#if selected?.caseStudy}
 				<div class="flex items-start justify-between gap-4">
@@ -65,12 +67,12 @@
 				</div>
 
 				<div class="mt-6 grid gap-6 sm:grid-cols-2">
-					<section class="glass rounded-2xl border p-5">
+					<section class="glass rounded-2xl border p-4 sm:p-5">
 						<p class="text-sm font-medium opacity-70">Problem</p>
 						<p class="mt-2 text-sm opacity-85">{selected.caseStudy.problem}</p>
 					</section>
 
-					<section class="glass rounded-2xl border p-5">
+					<section class="glass rounded-2xl border p-4 sm:p-5">
 						<p class="text-sm font-medium opacity-70">Stack</p>
 						<div class="mt-3 flex flex-wrap gap-2">
 							{#each selected.caseStudy.stack as s}
@@ -79,7 +81,7 @@
 						</div>
 					</section>
 
-					<section class="glass rounded-2xl border p-5 sm:col-span-2">
+					<section class="glass rounded-2xl border p-4 sm:p-5 sm:col-span-2">
 						<p class="text-sm font-medium opacity-70">Solution</p>
 						<ul class="mt-3 space-y-2">
 							{#each selected.caseStudy.solution as s}
@@ -92,7 +94,7 @@
 						</ul>
 					</section>
 
-					<section class="glass rounded-2xl border p-5 sm:col-span-2">
+					<section class="glass rounded-2xl border p-4 sm:p-5 sm:col-span-2">
 						<p class="text-sm font-medium opacity-70">Results</p>
 						<ul class="mt-3 space-y-2">
 							{#each selected.caseStudy.results as r}

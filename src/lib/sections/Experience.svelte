@@ -13,7 +13,7 @@
 	<!-- FOLYTONOS VONAL -->
 	<div class="brighter-border absolute top-0 bottom-0 left-3.25 hidden w-px border sm:block"></div>
 
-	<div class="space-y-6">
+	<div class="space-y-4 sm:space-y-6">
 		{#each experience as item (item.id)}
 			<article class="grid items-start gap-6 sm:grid-cols-[28px_1fr]">
 				<!-- Bal oszlop: csak a pont -->
@@ -24,20 +24,20 @@
 				</div>
 
 				<!-- Jobb oszlop: kártya -->
-				<div class="glass border-2 rounded-2xl p-6">
+				<div class="glass rounded-2xl border-2 p-4 sm:p-6">
 					<header class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 						<div>
-							<h3 class="text-lg font-semibold tracking-tight">{item.title}</h3>
+							<h3 class="text-lg leading-snug font-semibold tracking-tight">{item.title}</h3>
 							<p class="mt-1 text-sm opacity-80">
 								<span class="font-medium opacity-90">{item.org}</span>
 								{#if item.location}
 									<span class="opacity-60"> • {item.location}</span>
 								{/if}
 							</p>
-							<p class="mt-3 max-w-2xl text-sm opacity-80">{item.summary}</p>
+							<p class="mt-3 max-w-2xl text-sm leading-relaxed opacity-80">{item.summary}</p>
 						</div>
 
-						<div class="text-sm opacity-70 sm:text-right">
+						<div class="text-xs opacity-70 sm:text-right sm:text-sm">
 							<p class="font-medium">{item.period}</p>
 							{#if item.links?.length}
 								<div class="mt-2 flex gap-3 sm:justify-end">
@@ -56,13 +56,14 @@
 						</div>
 					</header>
 
-					<div class="mt-5 grid gap-6 lg:grid-cols-3">
+					<div class="mt-4 grid gap-5 sm:mt-5 sm:gap-6 lg:grid-cols-3">
 						<section class="lg:col-span-2">
 							<p class="text-sm font-medium opacity-70">Key achievements</p>
-							<ul class="mt-3 space-y-2">
+							<ul class="mt-2 space-y-1.5 sm:mt-3 sm:space-y-2">
 								{#each item.achievements as a}
 									<li class="flex gap-2 text-sm opacity-85">
-										<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
+										<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"
+										></span>
 										<span>{a}</span>
 									</li>
 								{/each}
@@ -71,7 +72,7 @@
 
 						<section>
 							<p class="text-sm font-medium opacity-70">Stack</p>
-							<div class="mt-3 flex flex-wrap gap-2">
+							<div class="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
 								{#each item.stack as s}
 									<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">{s}</span>
 								{/each}

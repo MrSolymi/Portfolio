@@ -16,7 +16,7 @@ export const certifications: Certification[] = [
     date: "2025-05",
     credentialId: "wMwqD-H9mA",
     tags: ["Unity", "C#"]
-    // url: "https://..." // ha megvan a credential link, ide jöhet
+    // url: "https://portfolio.mrsolymi.me"
   },
   {
     id: "it-specialist-python",

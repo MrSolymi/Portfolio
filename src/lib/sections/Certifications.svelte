@@ -9,19 +9,21 @@
 	subtitle="Relevant certifications and verifiable credentials."
 />
 
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
 	{#each certifications as c (c.id)}
-		<article class="glass rounded-2xl border-2 p-6">
+		<article class="glass rounded-2xl border-2 p-4 sm:p-6">
 			<div class="flex items-start justify-between gap-4">
-				<div>
-					<h3 class="text-base font-semibold tracking-tight">{c.name}</h3>
-					<p class="mt-1 text-sm opacity-80">{c.issuer}</p>
+				<div class="min-w-0">
+					<h3 class="text-base leading-snug font-semibold tracking-tight wrap-break-word">
+						{c.name}
+					</h3>
+					<p class="mt-1 text-sm wrap-break-word opacity-80">{c.issuer}</p>
 				</div>
-				<p class="text-sm font-medium whitespace-nowrap opacity-70">{c.date}</p>
+				<p class="text-xs font-medium whitespace-nowrap opacity-70 sm:text-sm">{c.date}</p>
 			</div>
 
 			{#if c.tags?.length}
-				<div class="mt-4 flex flex-wrap gap-2">
+				<div class="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
 					{#each c.tags as t}
 						<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
 					{/each}
@@ -29,7 +31,7 @@
 			{/if}
 
 			{#if c.credentialId}
-				<p class="mt-4 text-sm opacity-80">
+				<p class="mt-4 text-sm break-all opacity-80">
 					<span class="opacity-60">Credential ID:</span>
 					{c.credentialId}
 				</p>
@@ -38,7 +40,7 @@
 			{#if c.url}
 				<div class="mt-5">
 					<a
-						class="text-sm underline opacity-80 hover:opacity-100"
+						class="btn-glass inline-flex cursor-pointer rounded-lg border px-3 py-2 text-sm"
 						href={c.url}
 						target="_blank"
 						rel="noreferrer"
