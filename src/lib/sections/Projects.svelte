@@ -35,8 +35,8 @@
 	{#each filters as f}
 		<button
 			type="button"
-			class={'btn-glass cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ' +
-				(active === f ? 'opacity-100' : 'opacity-70 hover:opacity-100')}
+			class={'cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ' +
+				(active === f ? 'opacity-100 btn-primary' : 'btn-glass opacity-70 hover:opacity-100')}
 			on:click={() => (active = f)}
 		>
 			{f}
@@ -54,7 +54,7 @@
 <Dialog.Root {open} onOpenChange={handleOpenChange}>
 	<Dialog.Portal>
 		<Dialog.Content
-			class="glass z-50 w-[min(800px,calc(100vw-2rem))] max-w-none rounded-2xl border-2 p-6 backdrop-blur-lg sm:max-w-none sm:p-8"
+			class="glass z-50 w-[min(800px,calc(100vw-2rem))] max-w-none rounded-2xl border-2 p-6 backdrop-blur-lg sm:max-w-none sm:p-8 max-h-[85vh] overflow-y-auto overscroll-contain"
 		>
 			{#if selected?.caseStudy}
 				<div class="flex items-start justify-between gap-4">

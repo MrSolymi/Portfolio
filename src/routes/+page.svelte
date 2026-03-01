@@ -2,23 +2,20 @@
 	import Navbar from '$lib/components/NavigationBar.svelte';
 	import Container from '$lib/components/Container.svelte';
 
-	import Hero from '$lib/sections/Hero.svelte';
-	import About from '$lib/sections/About.svelte';
 	import Projects from '$lib/sections/Projects.svelte';
 	import Experience from '$lib/sections/Experience.svelte';
 	import Education from '$lib/sections/Education.svelte';
 	import Skills from '$lib/sections/Skills.svelte';
 	import Certifications from '$lib/sections/Certifications.svelte';
 	import Contact from '$lib/sections/Contact.svelte';
+	import Intro from '$lib/sections/Intro.svelte';
 </script>
 
 <Navbar />
 
 <main class="min-h-screen">
-	<Hero />
-
-	<section id="about" class="scroll-mt-14 py-20">
-		<Container><About /></Container>
+	<section id="about" class="scroll-mt-24">
+		<Intro />
 	</section>
 
 	<section id="projects" class="scroll-mt-14 py-20">
