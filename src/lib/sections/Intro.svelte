@@ -116,9 +116,9 @@
 				<h2 class="mt-2 text-2xl font-semibold tracking-tight">Who am I?</h2>
 
 				<p class="mt-4 text-sm leading-relaxed opacity-80">
-					I'm Attila Solymosi, a software developer in Debrecen. I earned my BSc in Computer Science
-					(Software Engineering) at the University of Debrecen in 2025. These days I'm mostly
-					working on Spring Boot backend applications.
+					I'm Attila Solymosi, a software developer. I earned my BSc in Computer Science (Software
+					Engineering) at the University of Debrecen in 2025. These days I'm mostly working on
+					Spring Boot backend applications.
 					<br /><br />
 					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
 					communication clear so progress stays steady. I'm also comfortable contributing to the creative
