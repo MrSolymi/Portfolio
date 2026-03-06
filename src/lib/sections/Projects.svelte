@@ -31,8 +31,8 @@
 	subtitle="A few projects worth mentioning. Click on the case study to see the approach and details."
 />
 
-<div class="-mx-4 mb-6 overflow-x-auto px-4 sm:mx-0 sm:mb-8 sm:px-0">
-	<div class="flex gap-2 whitespace-nowrap">
+<div class="-mx-4 mb-6 overflow-x-auto px-4 sm:mx-0 sm:mb-8 sm:overflow-visible sm:px-0">
+	<div class="flex gap-2 whitespace-nowrap sm:flex-wrap sm:whitespace-normal">
 		{#each filters as f}
 			<button
 				type="button"
@@ -56,7 +56,7 @@
 <Dialog.Root {open} onOpenChange={handleOpenChange}>
 	<Dialog.Portal>
 		<Dialog.Content
-			class="glass z-50 max-h-[85vh] w-[min(800px,calc(100vw-2rem))] max-w-none overflow-y-auto overscroll-contain rounded-2xl border-2 p-4 backdrop-blur-lg sm:p-8"
+			class="glass z-50 max-h-[85vh] w-[calc(100vw-2rem)]! max-w-225! overflow-y-auto overscroll-contain rounded-2xl border-2 p-4 backdrop-blur-lg sm:p-8 lg:max-w-250!"
 		>
 			{#if selected?.caseStudy}
 				<div class="flex items-start justify-between gap-4">
@@ -81,7 +81,7 @@
 						</div>
 					</section>
 
-					<section class="glass rounded-2xl border p-4 sm:p-5 sm:col-span-2">
+					<section class="glass rounded-2xl border p-4 sm:col-span-2 sm:p-5">
 						<p class="text-sm font-medium opacity-70">Solution</p>
 						<ul class="mt-3 space-y-2">
 							{#each selected.caseStudy.solution as s}
@@ -94,7 +94,7 @@
 						</ul>
 					</section>
 
-					<section class="glass rounded-2xl border p-4 sm:p-5 sm:col-span-2">
+					<section class="glass rounded-2xl border p-4 sm:col-span-2 sm:p-5">
 						<p class="text-sm font-medium opacity-70">Results</p>
 						<ul class="mt-3 space-y-2">
 							{#each selected.caseStudy.results as r}

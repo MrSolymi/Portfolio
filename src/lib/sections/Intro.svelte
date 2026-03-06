@@ -4,22 +4,22 @@
 	const quick = [
 		{
 			title: 'Backend & API',
-			text: 'Spring Boot REST APIs with validation, error handling, and a clean endpoint structure.'
+			text: 'Spring Boot REST APIs with thoughtful validation, consistent error responses, and tidy endpoint design.'
 		},
 		{
 			title: 'Full-stack mindset',
-			text: 'Svelte integration, auth flows, and backend decisions that support a smooth user experience.'
+			text: 'Frontend-friendly APIs, auth flows, and backend decisions that make the UI feel smoother.'
 		},
 		{
 			title: 'DevOps basics',
-			text: 'Docker / Compose, local-to-prod parity, and simple deploy workflows.'
+			text: 'Docker / Compose, repeatable environments, and simple deploy workflows that don’t fight you.'
 		}
 	];
 
 	const bullets = [
-		'Backend-focused with Java / Spring Boot',
-		'Clear architecture and consistent code style',
-		'Pragmatic Svelte + TypeScript integration'
+		'Collaborative mindset, clear communication',
+		'I care about clean code',
+		'Creative problem solving'
 	];
 </script>
 
@@ -31,12 +31,12 @@
 				<p class="text-xs font-medium opacity-70 sm:text-sm">Backend • Java • Spring Boot</p>
 
 				<h1 class="mt-3 text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-					Modern backends, clean architecture, reliable APIs.
+					I like building services that don’t wake you up at 2 AM.
 				</h1>
 
 				<p class="mt-4 max-w-xl text-sm leading-relaxed opacity-80 sm:mt-5 sm:text-lg">
-					Focused on REST APIs and well-structured code. Java + Spring Boot with pragmatic
-					Svelte/Tailwind integration. I build measurable, maintainable services designed to scale.
+					Spring Boot APIs, clean structure, and practical decisions over overengineering. Reliable
+					integrations, predictable deployments, readable code.
 				</p>
 
 				<div class="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row">
@@ -70,10 +70,10 @@
 						</div>
 
 						<div class="min-w-0 text-center sm:text-left">
-							<p class="text-lg font-semibold leading-tight">Attila Solymosi</p>
+							<p class="text-lg leading-tight font-semibold">Attila Solymosi</p>
 							<p class="mt-1 text-sm opacity-80">Backend / Full-stack Developer</p>
 
-							<div class="mt-3 flex flex-wrap gap-2 justify-center sm:justify-start">
+							<div class="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
 								<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80"
 									>Open to work</span
 								>
@@ -87,12 +87,12 @@
 
 				<div class="glass rounded-2xl border-2 p-4 sm:p-6">
 					<p class="text-sm opacity-70">Featured stack</p>
-					<p class="mt-2 text-sm sm:text-base font-medium">
+					<p class="mt-2 text-sm font-medium sm:text-base">
 						Java • Spring Boot • REST • Docker • C# • WPF • Svelte
 					</p>
 				</div>
 
-				<div class="grid gap-3 sm:gap-4 sm:grid-cols-3">
+				<div class="grid gap-3 sm:grid-cols-3 sm:gap-4">
 					<div class="glass rounded-2xl border-2 p-4 sm:p-5">
 						<p class="text-sm opacity-70">Projects</p>
 						<p class="mt-1 text-xl font-semibold">5+</p>
@@ -103,31 +103,34 @@
 					</div>
 					<div class="glass rounded-2xl border-2 p-4 sm:p-5">
 						<p class="text-sm opacity-70">Tools</p>
-						<p class="mt-1 text-xl font-semibold">Docker & Git</p>
+						<p class="mt-1 text-xl font-semibold">Git & Docker</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- ABOUT ROW -->
-		<div class="mt-10 sm:mt-14 grid items-start gap-6 sm:gap-8 lg:grid-cols-2">
+		<div class="mt-10 grid items-start gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-2">
 			<div class="glass rounded-2xl border-2 p-4 sm:p-6">
 				<p class="text-sm font-medium opacity-70">About me</p>
 				<h2 class="mt-2 text-2xl font-semibold tracking-tight">Who am I?</h2>
 
-				<p class="mt-4 text-sm opacity-80 leading-relaxed">
-					I’m Attila Solymosi, a software developer. I earned my BSc in Computer Science (Software
-					Engineering) at the University of Debrecen in 2025. I primarily build backend services
-					with Spring Boot and enjoy delivering clean, reliable APIs and maintainable architectures.
+				<p class="mt-4 text-sm leading-relaxed opacity-80">
+					I’m Attila Solymosi, a software developer in Debrecen. I earned my BSc in Computer Science
+					(Software Engineering) at the University of Debrecen in 2025. These days I mostly build
+					Spring Boot backends.
 					<br /><br />
-					I’m also comfortable in the C# .NET ecosystem (WPF). Beyond professional work, I’m passionate
-					about Unity game development, which connects to my thesis work.
+					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
+					communication clear so progress stays steady. I’m also comfortable contributing to the creative
+					side, from UX tweaks with the frontend to quick prototypes for new ideas. Outside backend, I
+					have experience with C#/.NET (WPF) and I’ve been working with Unity as part of my university
+					thesis project.
 				</p>
 
 				<ul class="mt-5 space-y-2">
 					{#each bullets as b}
 						<li class="flex gap-2 text-sm opacity-85">
-							<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full border brighter-border"></span>
+							<span class="brighter-border mt-2 h-1.5 w-1.5 shrink-0 rounded-full border"></span>
 							<span>{b}</span>
 						</li>
 					{/each}
@@ -138,15 +141,15 @@
 				{#each quick as q (q.title)}
 					<div class="glass rounded-2xl border-2 p-4 sm:p-6">
 						<p class="text-sm font-medium">{q.title}</p>
-						<p class="mt-2 text-sm opacity-80 leading-relaxed">{q.text}</p>
+						<p class="mt-2 text-sm leading-relaxed opacity-80">{q.text}</p>
 					</div>
 				{/each}
 
 				<div class="glass rounded-2xl border-2 p-4 sm:p-6">
 					<p class="text-sm font-medium">Currently</p>
-					<p class="mt-2 text-sm opacity-80 leading-relaxed">
-						I’m open to backend or full-stack opportunities where I can build and improve reliable
-						systems using Spring Boot and a modern stack.
+					<p class="mt-2 text-sm leading-relaxed opacity-80">
+						Open to backend or full-stack opportunities where I can build reliable systems and keep
+						improving them.
 					</p>
 				</div>
 			</div>
