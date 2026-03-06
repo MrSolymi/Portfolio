@@ -117,14 +117,14 @@
 
 				<p class="mt-4 text-sm leading-relaxed opacity-80">
 					I'm Attila Solymosi, a software developer in Debrecen. I earned my BSc in Computer Science
-					(Software Engineering) at the University of Debrecen in 2025. These days I mostly build
-					Spring Boot backends.
+					(Software Engineering) at the University of Debrecen in 2025. These days I'm mostly
+					working on Spring Boot backend applications.
 					<br /><br />
 					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
 					communication clear so progress stays steady. I'm also comfortable contributing to the creative
 					side, from UX tweaks with the frontend to quick prototypes for new ideas. Outside backend, I
-					have experience with C#/.NET and I've been working with Unity as part of my university
-					thesis project.
+					have experience with C#/.NET and I've been working with Unity as part of my university thesis
+					project.
 				</p>
 
 				<ul class="mt-5 space-y-2">
