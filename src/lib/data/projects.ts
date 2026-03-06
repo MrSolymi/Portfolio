@@ -104,7 +104,8 @@ export const projects: Project[] = [
 			solution: [
 				'Built a reusable project data model and components',
 				'Focused on UI details to keep the site polished',
-				'Set up a lightweight Git → Cloudflare Workers deployment flow to publish updates quickly'
+				'Set up a lightweight Git → Cloudflare Workers deployment flow to publish updates quickly',
+        'Optimized the layout for smaller screens, so everything stays readable and easy to navigate.'
 			],
 			results: [
 				'A clean, maintainable site that’s easy to extend with new projects and case studies; or restyle without rewriting content',
