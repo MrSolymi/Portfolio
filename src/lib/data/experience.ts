@@ -1,12 +1,12 @@
 export type ExperienceItem = {
 	id: string;
-	title: string; // pl. "Backend Developer (Spring Boot)"
-	org: string; // cég / projekt / egyetem
-	period: string; // "2024 — 2026" vagy "Jun 2025 — Present"
-	location?: string; // optional
-	summary: string; // 1 mondat
-	achievements: string[]; // 3-5 bullet
-	stack: string[]; // badge-ek
+	title: string; 
+	org: string; 
+	period: string; 
+	location?: string; 
+	summary: string; 
+	achievements: string[];
+	stack: string[]; 
 	links?: { label: string; href: string }[];
 };
 
@@ -29,7 +29,7 @@ export const experience: ExperienceItem[] = [
 		id: 'my-projects',
 		title: 'Full-stack Developer',
 		org: 'Personal Projects',
-		period: '2023 — Present',
+		period: '2023 - Present',
 		location: 'Hungary / Remote',
 		summary:
 			'Backend-focused projects with Spring Boot, Svelte frontend integration, and Dockerized environments.',
@@ -45,10 +45,10 @@ export const experience: ExperienceItem[] = [
 		id: 'ik-hok-comm',
 		title: 'Communications Officer',
 		org: 'Faculty of Informatics Student Union',
-		period: '2022 — 2025',
+		period: '2022 - 2025',
 		location: 'University of Debrecen',
 		summary:
-			'Handled student-facing communication and social media for the faculty’s student union, including event promotion and visual branding.',
+			'Handled student-facing communication and social media for the faculty\'s student union, including event promotion and visual branding.',
 		achievements: [
 			'Acted as a main point of contact between the student union and students, sharing updates and answering questions',
 			'Planned and published social media posts for events and important announcements',

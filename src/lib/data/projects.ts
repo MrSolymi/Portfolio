@@ -32,7 +32,7 @@ export const projects: Project[] = [
 		links: { repo: 'https://github.com/MrSolymi/ContactManager', caseStudy: true },
 		caseStudy: {
 			problem:
-				'Manually extracting contacts from emails was slow and error-prone — a fast, review-first workflow was needed.',
+				'Manually extracting contacts from emails was slow and error-prone - a fast, review-first workflow was needed.',
 			solution: [
 				'MVVM architecture with scalable UI state management',
 				'SQLite + EF Core with a repository-style data layer for clean separation and testability',
@@ -49,7 +49,7 @@ export const projects: Project[] = [
 		id: 'unity-thesis-project',
 		title: 'Unity 2D Metroidvania (Thesis Project)',
 		description:
-			'A 2D Unity platformer inspired by Hollow Knight — built with a component-first architecture for reusable, maintainable gameplay systems.',
+			'A 2D Unity platformer inspired by Hollow Knight - built with a component-first architecture for reusable, maintainable gameplay systems.',
 		tags: ['Unity', 'C#', 'Game Dev'],
 		highlights: [
 			'Component-based gameplay code designed for reuse, clarity, and easy iteration',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
 		links: { repo: 'https://github.com/MrSolymi/Szakdolgozat', caseStudy: true },
 		caseStudy: {
 			problem:
-				'For my thesis, I wanted to build a 2D game while keeping the codebase highly modular — easy to extend, easy to debug, and built from reusable components rather than one-off scripts.',
+				'For my thesis, I wanted to build a 2D game while keeping the codebase highly modular - easy to extend, easy to debug, and built from reusable components rather than one-off scripts.',
 			solution: [
 				'Designed gameplay features around composable components to keep responsibilities small and systems reusable',
 				'Used state machines to structure complex behaviors (player, enemies, and interactions) without spaghetti logic',
@@ -90,7 +90,7 @@ export const projects: Project[] = [
 		tags: ['Svelte', 'Tailwind', 'TypeScript'],
 		highlights: [
 			'Component-driven UI with a consistent look and a “clean but not boring” style',
-			'Project case studies for the work that’s worth diving into (problem → solution → results)',
+			'Project case studies for the work that\'s worth diving into (problem → solution → results)',
 			'Deployed on Cloudflare Workers with a simple Git-based update flow (push changes → site updates)'
 		],
 		links: {
@@ -108,7 +108,7 @@ export const projects: Project[] = [
         'Optimized the layout for smaller screens, so everything stays readable and easy to navigate.'
 			],
 			results: [
-				'A clean, maintainable site that’s easy to extend with new projects and case studies; or restyle without rewriting content',
+				'A clean, maintainable site that\'s easy to extend with new projects and case studies; or restyle without rewriting content',
 				'Fast, responsive experience with smooth navigation'
 			],
 			stack: ['Svelte', 'TypeScript', 'Tailwind CSS', 'Cloudflare Workers']
@@ -141,7 +141,7 @@ export const projects: Project[] = [
 			],
 			results: [
 				'A working CLI app where admins can manage the cinema setup and users can book seats safely',
-				'A structure that’s easy to extend (new commands, rules, or pricing logic) and easy to test'
+				'A structure that\'s easy to extend (new commands, rules, or pricing logic) and easy to test'
 			],
 			stack: [
 				'Java',
@@ -207,11 +207,11 @@ export const projects: Project[] = [
 		id: 'java-side-projects',
 		title: 'Other Java Projects',
 		description:
-			'A small collection of Java side projects built out of curiosity — Discord bot experiments, plus lightweight Minecraft server plugins that add missing QoL features and simple gameplay tweaks.',
+			'A small collection of Java side projects built out of curiosity - Discord bot experiments, plus lightweight Minecraft server plugins that add missing QoL features and simple gameplay tweaks.',
 		tags: ['Java', 'Gradle', 'JDA', 'Minecraft Plugins', 'Spigot/Paper'],
 		highlights: [
 			'Minecraft plugins: custom commands, small QoL additions, and simple gameplay/item behavior tweaks',
-			'Server-side player validation for multiplayer setups (useful when online-mode isn’t enabled)',
+			'Server-side player validation for multiplayer setups (useful when online-mode isn\'t enabled)',
 			'Discord bot: modular slash commands + music playback with queue management'
 		],
 		links: { caseStudy: true },
@@ -220,7 +220,7 @@ export const projects: Project[] = [
 				'I like having a playground for Java: quick projects where I can try APIs, build small utilities, and ship tiny features that are missing from tools or games I use.',
 			solution: [
 				'Built lightweight Minecraft plugins for Spigot/Paper with custom commands and small mechanics tweaks',
-				'Added server-side checks/validation for players in multiplayer environments where online-mode isn’t enabled',
+				'Added server-side checks/validation for players in multiplayer environments where online-mode isn\'t enabled',
 				'Experimented with a Discord bot using JDA: a clean command structure and a music flow with per-guild queue handling'
 			],
 			results: [
@@ -234,7 +234,7 @@ export const projects: Project[] = [
 		id: 'homelab',
 		title: 'Homelab & Self-Hosting Playground',
 		description:
-			'I have a small homelab server at home that I use as a playground and a practical dev environment. ' +
+			'I have a small homelab server that I use as a playground and a practical dev environment. ' +
 			'I run most things in Docker (managed via Portainer) - including my own Postgres and Redis instances for development, plus various self-hosted services like game servers (Minecraft and others), a torrent setup, lightweight media hosting.',
 		tags: ['Docker', 'Portainer', 'PostgreSQL', 'Redis', 'Nginx', 'Self-Hosting', 'Linux'],
 		highlights: [
@@ -245,7 +245,7 @@ export const projects: Project[] = [
 		links: { caseStudy: true },
 		caseStudy: {
 			problem:
-				'I wanted a real environment to learn and experiment — not just tutorials. Something I can use daily for development, while also hosting useful services for myself (and sometimes friends).',
+				'I wanted a real environment to learn and experiment. Something I can use daily for development, while also hosting useful services for myself (and sometimes friends).',
 			solution: [
 				'Set up a small dedicated server and standardized deployments with Docker + Portainer',
 				'Run Postgres and Redis as always-available building blocks for local development and testing',

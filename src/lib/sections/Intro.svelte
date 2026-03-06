@@ -12,7 +12,7 @@
 		},
 		{
 			title: 'DevOps basics',
-			text: 'Docker / Compose, repeatable environments, and simple deploy workflows that don’t fight you.'
+			text: 'Docker / Compose, repeatable environments, and simple deploy workflows'
 		}
 	];
 
@@ -31,7 +31,7 @@
 				<p class="text-xs font-medium opacity-70 sm:text-sm">Backend • Java • Spring Boot</p>
 
 				<h1 class="mt-3 text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-					I like building services that don’t wake you up at 2 AM.
+					I like building services that don't wake you up at 2 AM.
 				</h1>
 
 				<p class="mt-4 max-w-xl text-sm leading-relaxed opacity-80 sm:mt-5 sm:text-lg">
@@ -116,14 +116,14 @@
 				<h2 class="mt-2 text-2xl font-semibold tracking-tight">Who am I?</h2>
 
 				<p class="mt-4 text-sm leading-relaxed opacity-80">
-					I’m Attila Solymosi, a software developer in Debrecen. I earned my BSc in Computer Science
+					I'm Attila Solymosi, a software developer in Debrecen. I earned my BSc in Computer Science
 					(Software Engineering) at the University of Debrecen in 2025. These days I mostly build
 					Spring Boot backends.
 					<br /><br />
 					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
-					communication clear so progress stays steady. I’m also comfortable contributing to the creative
+					communication clear so progress stays steady. I'm also comfortable contributing to the creative
 					side, from UX tweaks with the frontend to quick prototypes for new ideas. Outside backend, I
-					have experience with C#/.NET and I’ve been working with Unity as part of my university
+					have experience with C#/.NET and I've been working with Unity as part of my university
 					thesis project.
 				</p>
 

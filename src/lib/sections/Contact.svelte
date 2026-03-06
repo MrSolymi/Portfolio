@@ -6,7 +6,7 @@
 <SectionTitle
 	eyebrow="Contact"
 	title="Contact"
-	subtitle="Feel free to reach out — for work, projects, or any questions."
+	subtitle="Feel free to reach out - for work, projects, or any questions."
 />
 
 <div class="glass rounded-2xl border-2 p-4 sm:p-6">
