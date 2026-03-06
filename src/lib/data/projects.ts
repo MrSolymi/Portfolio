@@ -89,7 +89,7 @@ export const projects: Project[] = [
 			'My personal portfolio built with SvelteKit + Tailwind and fast Cloudflare deployment.',
 		tags: ['Svelte', 'Tailwind', 'TypeScript'],
 		highlights: [
-			'Component-driven UI with a consistent look and a “clean but not boring” style',
+			'Component-driven UI with a consistent look and a \"clean but not boring\" style',
 			'Project case studies for the work that\'s worth diving into (problem → solution → results)',
 			'Deployed on Cloudflare Workers with a simple Git-based update flow (push changes → site updates)'
 		],
