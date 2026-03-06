@@ -76,7 +76,7 @@
 						<p class="text-sm font-medium opacity-70">Stack</p>
 						<div class="mt-3 flex flex-wrap gap-2">
 							{#each selected.caseStudy.stack as s}
-								<span class="rounded-full border px-2.5 py-1 text-xs opacity-80">{s}</span>
+								<span class="glass brighter-border rounded-full border px-2.5 py-1 text-xs opacity-80">{s}</span>
 							{/each}
 						</div>
 					</section>
