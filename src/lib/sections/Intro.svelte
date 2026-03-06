@@ -123,7 +123,7 @@
 					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
 					communication clear so progress stays steady. I’m also comfortable contributing to the creative
 					side, from UX tweaks with the frontend to quick prototypes for new ideas. Outside backend, I
-					have experience with C#/.NET (WPF) and I’ve been working with Unity as part of my university
+					have experience with C#/.NET and I’ve been working with Unity as part of my university
 					thesis project.
 				</p>
 
