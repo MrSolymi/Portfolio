@@ -12,8 +12,7 @@
 <div class="glass rounded-2xl border-2 p-4 sm:p-6">
 	<div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 		<p class="max-w-xl text-sm leading-relaxed opacity-80">
-			The fastest way to reach me is via email. I also respond on LinkedIn. If you include a short
-			project summary + timeline, I can reply faster.
+			The fastest way to reach me is via email. I also respond on LinkedIn. Looking forward to connecting!
 		</p>
 
 		<div class="flex flex-col gap-2 sm:flex-row sm:gap-3">
