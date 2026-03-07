@@ -23,7 +23,7 @@ export const projects: Project[] = [
 		title: 'ContactManager',
 		description:
 			'A WPF desktop app to extract, store, and review contacts from emails (MVVM, SQLite).',
-		tags: ['WPF', 'C#', 'SQLite', 'MVVM'],
+		tags: ['WPF', 'C#', 'SQLite', 'MVVM', 'OAuth 2.0'],
 		highlights: [
 			'Regex-based contact extraction with deduplication',
 			'Filters, DataGrid UX, and review/status fields for a smooth workflow',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
 				'Faster processing with a consistent review workflow',
 				'Searchable/filterable database with clean auditability'
 			],
-			stack: ['C#', 'WPF', 'MVVM', 'SQLite', 'Google OAuth 2.0']
+			stack: ['C#', 'WPF', 'MVVM', 'SQLite', 'OAuth 2.0']
 		}
 	},
 	{
@@ -90,7 +90,7 @@ export const projects: Project[] = [
 		tags: ['Svelte', 'Tailwind', 'TypeScript'],
 		highlights: [
 			'Component-driven UI with a consistent look and a \"clean but not boring\" style',
-			'Project case studies for the work that\'s worth diving into (problem → solution → results)',
+			"Project case studies for the work that's worth diving into (problem → solution → results)",
 			'Deployed on Cloudflare Workers with a simple Git-based update flow (push changes → site updates)'
 		],
 		links: {
@@ -105,10 +105,10 @@ export const projects: Project[] = [
 				'Built a reusable project data model and components',
 				'Focused on UI details to keep the site polished',
 				'Set up a lightweight Git → Cloudflare Workers deployment flow to publish updates quickly',
-        'Optimized the layout for smaller screens, so everything stays readable and easy to navigate.'
+				'Optimized the layout for smaller screens, so everything stays readable and easy to navigate.'
 			],
 			results: [
-				'A clean, maintainable site that\'s easy to extend with new projects and case studies; or restyle without rewriting content',
+				"A clean, maintainable site that's easy to extend with new projects and case studies; or restyle without rewriting content",
 				'Fast, responsive experience with smooth navigation'
 			],
 			stack: ['Svelte', 'TypeScript', 'Tailwind CSS', 'Cloudflare Workers']
@@ -141,7 +141,7 @@ export const projects: Project[] = [
 			],
 			results: [
 				'A working CLI app where admins can manage the cinema setup and users can book seats safely',
-				'A structure that\'s easy to extend (new commands, rules, or pricing logic) and easy to test'
+				"A structure that's easy to extend (new commands, rules, or pricing logic) and easy to test"
 			],
 			stack: [
 				'Java',
@@ -191,17 +191,33 @@ export const projects: Project[] = [
 		}
 	},
 	{
-		id: 'spring-svelte-app',
-		title: 'Spring Boot + Svelte',
+		id: 'image-hosting-webapp',
+		title: 'Image Hosting Web App (Team Project)',
 		description:
-			'Spring Boot backend API with a Svelte frontend, session-based auth, and a clean endpoint structure.',
-		tags: ['Java', 'Spring Boot', 'Svelte', 'Auth'],
+			'A university team project: an invite-only image hosting web app with JWT-based authentication, per-user storage, and shareable links. Built with Spring Boot backend and a Svelte + TypeScript frontend.',
+		tags: ['Java', 'Spring Boot', 'Svelte', 'TypeScript', 'JWT', 'Auth', 'JPA', 'Gradle'],
 		highlights: [
-			'Session-based authentication with secure password handling and auth flow design',
-			'REST API design + validation, error handling, and a clean endpoint structure'
-		]
-		// links: { repo: "https://github.com/...", live: "https://..." },
-		//links: { repo: 'https://github.com/...' }
+			'Invite-only registration flow + JWT-based authentication and role-based access control',
+			'Per-account storage with image upload/download and basic quota management',
+			'Shareable links via generated URLs for controlled image sharing'
+		],
+		links: { caseStudy: true },
+		caseStudy: {
+			problem:
+				'As a team assignment at university, we had to design and build a full web application with real-world features like authentication, permissions, and secure content sharing.',
+			solution: [
+				'Spring Boot backend with a clean API surface for authentication and image management',
+				'JWT-based auth flow to secure requests and support frontend integration',
+				'Invite-based onboarding so only approved users could create accounts',
+				'Implemented upload/download endpoints and per-user storage handling',
+				'Added shareable links using generated URLs, plus permission checks around access'
+			],
+			results: [
+				'A working image hosting app with a complete JWT auth flow and controlled sharing',
+				'A solid team-built full-stack project where backend and frontend responsibilities were clearly separated'
+			],
+			stack: ['Java', 'Spring Boot', 'JWT', 'Svelte', 'TypeScript']
+		}
 	},
 	{
 		id: 'java-side-projects',
@@ -211,7 +227,7 @@ export const projects: Project[] = [
 		tags: ['Java', 'Gradle', 'JDA', 'Minecraft Plugins', 'Spigot/Paper'],
 		highlights: [
 			'Minecraft plugins: custom commands, small QoL additions, and simple gameplay/item behavior tweaks',
-			'Server-side player validation for multiplayer setups (useful when online-mode isn\'t enabled)',
+			"Server-side player validation for multiplayer setups (useful when online-mode isn't enabled)",
 			'Discord bot: modular slash commands + music playback with queue management'
 		],
 		links: { caseStudy: true },
@@ -220,7 +236,7 @@ export const projects: Project[] = [
 				'I like having a playground for Java: quick projects where I can try APIs, build small utilities, and ship tiny features that are missing from tools or games I use.',
 			solution: [
 				'Built lightweight Minecraft plugins for Spigot/Paper with custom commands and small mechanics tweaks',
-				'Added server-side checks/validation for players in multiplayer environments where online-mode isn\'t enabled',
+				"Added server-side checks/validation for players in multiplayer environments where online-mode isn't enabled",
 				'Experimented with a Discord bot using JDA: a clean command structure and a music flow with per-guild queue handling'
 			],
 			results: [
