@@ -26,7 +26,7 @@
 					.sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
 				if (visible?.target?.id) activeId = visible.target.id;
 			},
-			{ rootMargin: '-30% 0px -60% 0px', threshold: [0.1, 0.2, 0.3] }
+			{ rootMargin: '-10% 0px -50% 0px', threshold: 0.05 }
 		);
 
 		sections.forEach((s) => io.observe(s));
