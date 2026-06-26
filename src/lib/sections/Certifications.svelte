@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
 	import { certifications } from '$lib/data/certifications';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <SectionTitle
@@ -10,8 +11,8 @@
 />
 
 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-	{#each certifications as c (c.id)}
-		<article class="glass rounded-2xl border-2 p-4 sm:p-6">
+	{#each certifications as c, i (c.id)}
+		<article class="glass glass-hover rounded-2xl border-2 p-4 sm:p-6" use:reveal={{ delay: i * 80 }}>
 			<div class="flex items-start justify-between gap-4">
 				<div class="min-w-0">
 					<h3 class="text-base leading-snug font-semibold tracking-tight wrap-break-word">
@@ -25,7 +26,7 @@
 			{#if c.tags?.length}
 				<div class="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
 					{#each c.tags as t}
-						<span class="glass rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
+						<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
 					{/each}
 				</div>
 			{/if}

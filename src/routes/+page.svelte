@@ -14,51 +14,46 @@
 <Navbar />
 
 <main class="min-h-screen">
-	<section id="about" class="scroll-mt-24 py-10 max-sm:py-5">
+	<section id="about" class="scroll-mt-16">
 		<Intro />
 	</section>
 
-	<section id="projects" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="projects" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Projects /></Container>
 	</section>
 
-	<section id="education" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="education" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Education /></Container>
 	</section>
 
-	<section id="experience" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="experience" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Experience /></Container>
 	</section>
 
-	<section id="skills" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="skills" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Skills /></Container>
 	</section>
 
-	<section id="certifications" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="certifications" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Certifications /></Container>
 	</section>
 
-	<section id="contact" class="scroll-mt-14 py-10 max-sm:py-5">
+	<section id="contact" class="scroll-mt-14 py-16 max-sm:py-10">
 		<Container><Contact /></Container>
 	</section>
 
-	<footer class="border-t backdrop-blur py-10 max-sm:py-5 bg-black/30">
-		<Container className="flex flex-col sm:flex-row items-center justify-between gap-4 opacity-80">
-			<p class="text-sm">© {new Date().getFullYear()} Attila Solymosi</p>
-			<div class="flex gap-4 text-sm">
-				<a
-					class="opacity-80 hover:opacity-100"
-					href="https://github.com/MrSolymi"
-					target="_blank"
-					rel="noreferrer">GitHub</a
-				>
-				<a
-					class="opacity-80 hover:opacity-100"
-					href="https://linkedin.com/in/mrsolymi"
-					target="_blank"
-					rel="noreferrer">LinkedIn</a
-				>
-				<a class="opacity-80 hover:opacity-100" href="mailto:solymosiati001220@outlook.hu">Email</a>
+	<footer class="border-t border-white/5 py-10 max-sm:py-6 bg-linear-to-b from-transparent to-black/20">
+		<Container className="flex flex-col items-center gap-4">
+			<p class="text-center text-xs tracking-[0.2em] uppercase opacity-25 font-mono">
+				Currently available — Backend / Full-stack roles — Remote or hybrid
+			</p>
+			<div class="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-between opacity-50">
+				<p class="text-sm">© {new Date().getFullYear()} Attila Solymosi</p>
+				<div class="flex gap-5 text-sm">
+					<a class="hover:opacity-100 transition-opacity" href="https://github.com/MrSolymi" target="_blank" rel="noreferrer">GitHub</a>
+					<a class="hover:opacity-100 transition-opacity" href="https://linkedin.com/in/mrsolymi" target="_blank" rel="noreferrer">LinkedIn</a>
+					<a class="hover:opacity-100 transition-opacity" href="mailto:solymosiati001220@outlook.hu">Email</a>
+				</div>
 			</div>
 		</Container>
 	</footer>

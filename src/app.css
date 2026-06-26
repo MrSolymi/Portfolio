@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import 'tailwindcss';
 
 :root {
-	--background: hsl(240 10% 6%);
+	--background: hsl(240 12% 5%);
 	--foreground: hsl(0 0% 98%);
 	--card: hsl(240 10% 10%);
 	--card-foreground: hsl(0 0% 98%);
@@ -15,6 +16,7 @@
 	--muted-foreground: hsl(0 0% 45%);
 	--accent: hsl(263 50% 92%);
 	--accent-foreground: hsl(263 70% 30%);
+	--accent-cyan: hsl(188 90% 55%);
 	--destructive: hsl(0 72% 51%);
 	--destructive-foreground: hsl(0 0% 100%);
 	--border: hsla(251, 70%, 48%, 0.16);
@@ -55,6 +57,7 @@
 	--color-muted-foreground: var(--muted-foreground);
 	--color-accent: var(--accent);
 	--color-accent-foreground: var(--accent-foreground);
+	--color-accent-cyan: var(--accent-cyan);
 	--color-destructive: var(--destructive);
 	--color-border: var(--border);
 	--color-input: var(--input);
@@ -80,23 +83,21 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+		overflow-x: clip;
+	}
+	h1, h2, h3 {
+		font-family: 'Space Grotesk', sans-serif;
 	}
 	#bg {
 		content: '';
 		position: fixed;
 		inset: 0;
 		z-index: -1;
-
-    width: 100vw;
-    height: 100vh;
-
-		background-image: url('/background/bg3.png');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-  
-
-		filter: blur(1px) contrast(0.95) saturate(1.65);
+		width: 100vw;
+		height: 100vh;
+		background-color: hsl(240 12% 5%);
+		background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+		background-size: 28px 28px;
 	}
 }
 
@@ -114,6 +115,14 @@
 		@apply backdrop-blur-xl;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 		background: color-mix(in oklab, var(--primary) 4%, transparent);
+	}
+
+	/* Editorial left-accent card — the main card style in the redesign */
+	.card-accent {
+		border-left: 3px solid color-mix(in oklab, var(--primary) 60%, transparent);
+		background: rgba(255, 255, 255, 0.03);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 	}
 
 	.btn-glass {
@@ -153,8 +162,229 @@
 	.brighter-avatar-border {
 		border-color: color-mix(in oklab, var(--border) 100%, transparent);
 	}
+
+	/* Live availability dot */
+	.dot-live {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--accent-cyan);
+		box-shadow: 0 0 6px var(--accent-cyan);
+		animation: dot-pulse 2s ease-in-out infinite;
+		flex-shrink: 0;
+	}
+
+	/* Marquee container */
+	.marquee-track {
+		overflow: hidden;
+		-webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+		mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+	}
+
+	.marquee-inner {
+		display: flex;
+		width: max-content;
+	}
+
+	/* Glass card hover glow — no translateY, tilt action handles lift */
+	.glass-hover {
+		transition: box-shadow 0.25s ease;
+	}
+
+	.glass-hover:hover {
+		box-shadow:
+			0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent),
+			0 8px 32px color-mix(in oklab, var(--primary) 25%, transparent),
+			0 20px 40px rgba(0, 0, 0, 0.45);
+	}
+
+	/* Skill pill hover */
+	.pill-hover {
+		transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+		cursor: default;
+	}
+
+	.pill-hover:hover {
+		background: color-mix(in oklab, var(--primary) 20%, transparent);
+		border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+		box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 20%, transparent);
+		transform: scale(1.05);
+	}
+}
+
+/* ─── Button shine shimmer ───────────────────────────────────────────────── */
+.btn-primary {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-primary::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+	transform: translateX(-100%);
+	transition: transform 0s;
+}
+
+.btn-primary:hover::after {
+	transform: translateX(100%);
+	transition: transform 0.5s ease;
+}
+
+/* ─── Scroll-reveal ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes reveal-up {
+		from {
+			opacity: 0;
+			transform: translateY(-16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.reveal {
+		opacity: 0;
+	}
+
+	.reveal.visible {
+		animation: reveal-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+		animation-delay: var(--reveal-delay, 0ms);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1 !important;
+	}
+	.marquee-inner {
+		animation: none !important;
+	}
+	.dot-live {
+		animation: none !important;
+	}
+}
+
+/* ─── Gradient hero headline ─────────────────────────────────────────────── */
+@keyframes gradient-shift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+@layer utilities {
+	.gradient-text {
+		background: linear-gradient(135deg, hsl(255 85% 75%), hsl(220 85% 70%), hsl(188 90% 65%), hsl(255 85% 75%));
+		background-size: 300% 300%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: transparent;
+		animation: gradient-shift 8s ease infinite;
+	}
+}
+
+/* ─── Typewriter cursor ──────────────────────────────────────────────────── */
+@keyframes cursor-blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+	color: var(--accent-cyan);
+	animation: cursor-blink 1s step-end infinite;
+	margin-left: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.typewriter-cursor { animation: none; }
+}
+
+/* ─── Live dot pulse ─────────────────────────────────────────────────────── */
+@keyframes dot-pulse {
+	0%, 100% { box-shadow: 0 0 4px var(--accent-cyan), 0 0 0px transparent; }
+	50% { box-shadow: 0 0 10px var(--accent-cyan), 0 0 16px color-mix(in oklab, var(--accent-cyan) 40%, transparent); }
+}
+
+/* ─── Marquee animations ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes marquee-fwd {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+
+	@keyframes marquee-rev {
+		0% { transform: translateX(-50%); }
+		100% { transform: translateX(0); }
+	}
+}
+
+/* ─── Animated background blobs ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes blob-float-1 {
+		0% { transform: translate(0, 0) scale(1); }
+		100% { transform: translate(60px, -80px) scale(1.15); }
+	}
+	@keyframes blob-float-2 {
+		0% { transform: translate(0, 0) scale(1); }
+		100% { transform: translate(-50px, 70px) scale(0.9); }
+	}
+	@keyframes blob-float-3 {
+		0% { transform: translate(0, 0) scale(1); }
+		100% { transform: translate(40px, 50px) scale(1.1); }
+	}
+
+	#blob-1 { animation: blob-float-1 18s ease-in-out infinite alternate; }
+	#blob-2 { animation: blob-float-2 22s ease-in-out infinite alternate; }
+	#blob-3 { animation: blob-float-3 15s ease-in-out infinite alternate; }
 }
 
 html {
 	scrollbar-gutter: stable;
+}
+
+/* ─── Cursor spotlight glow ──────────────────────────────────────────────── */
+#cursor-glow {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 420px;
+	height: 420px;
+	margin-left: -210px;
+	margin-top: -210px;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 0;
+	background: radial-gradient(
+		circle,
+		color-mix(in oklab, var(--primary) 5%, transparent) 0%,
+		transparent 65%
+	);
+	transform: translate(-9999px, -9999px);
+	will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+	#cursor-glow { display: none; }
+}
+
+/* ─── Avatar ring spin ───────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes ring-spin {
+		to { transform: rotate(360deg); }
+	}
+	@keyframes ring-counter {
+		to { transform: rotate(-360deg); }
+	}
+
+	.avatar-ring {
+		animation: ring-spin 10s linear infinite;
+	}
+
+	.avatar-counter {
+		animation: ring-counter 10s linear infinite;
+	}
 }

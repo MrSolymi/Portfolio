@@ -12,7 +12,27 @@
 	];
 
 	let activeId = 'about';
+	let scrollProgress = 0;
 	let cleanup: null | (() => void) = null;
+
+	let buttonEls: HTMLButtonElement[] = [];
+	let pillLeft = 0;
+	let pillWidth = 0;
+	let pillReady = false;
+
+	function updatePill() {
+		const activeIndex = items.findIndex((i) => i.id === activeId);
+		const el = buttonEls[activeIndex];
+		if (el) {
+			pillLeft = el.offsetLeft;
+			pillWidth = el.offsetWidth;
+			pillReady = true;
+		}
+	}
+
+	$: if (activeId && buttonEls.length) {
+		updatePill();
+	}
 
 	function setupObserver() {
 		const sections = items
@@ -30,47 +50,65 @@
 		);
 
 		sections.forEach((s) => io.observe(s));
-		return () => io.disconnect();
+
+		function onScroll() {
+			const max = document.body.scrollHeight - window.innerHeight;
+			scrollProgress = max > 0 ? (window.scrollY / max) * 100 : 0;
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+
+		return () => {
+			io.disconnect();
+			window.removeEventListener('scroll', onScroll);
+		};
 	}
 
 	function scrollTo(id: string) {
-		//activeId = id;
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 
 	onMount(async () => {
-		await tick(); // megvárja, míg a page DOM felépül
+		await tick();
 		cleanup = setupObserver();
+		await tick();
+		updatePill();
 	});
 
 	onDestroy(() => cleanup?.());
 </script>
 
-<header class="sticky top-0 z-50 border-b backdrop-blur bg-black/30">
+<header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur bg-black/40">
+	<!-- Scroll progress bar -->
+	<div
+		class="absolute top-0 left-0 h-0.5 transition-all duration-150"
+		style="width: {scrollProgress}%; background: linear-gradient(90deg, hsl(255 85% 65%), hsl(188 90% 55%));"
+		aria-hidden="true"
+	></div>
+
 	<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-		<a href="/" class="font-semibold tracking-tight">Attila Solymosi</a>
+		<a
+			href="/"
+			class="text-base font-semibold tracking-tight"
+			style="font-family: 'Space Grotesk', sans-serif;"
+		>
+			Attila Solymosi
+		</a>
 
-		<!--
-		<div class="hidden items-center gap-1 md:flex">
-			{#each items as item}
-				<button
-					class={'rounded-lg px-3 py-2 text-sm transition ' +
-						(activeId === item.id ? 'opacity-100' : 'opacity-70 hover:opacity-100')}
-					on:click={() => scrollTo(item.id)}
-				>
-					{item.label}
-				</button>
-			{/each}
-		</div>
-		-->
+		<div class="relative hidden items-center md:flex">
+			<!-- Sliding pill indicator -->
+			{#if pillReady}
+				<span
+					class="absolute top-1/2 -translate-y-1/2 rounded-full pointer-events-none transition-all duration-250"
+					style="left: {pillLeft}px; width: {pillWidth}px; height: 32px; background: color-mix(in oklab, var(--primary) 14%, transparent); border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);"
+					aria-hidden="true"
+				></span>
+			{/if}
 
-		<div class="hidden items-center gap-1 md:flex">
-			{#each items as item}
+			{#each items as item, i}
 				<button
-					class={'cursor-pointer rounded-lg px-3 py-2 text-sm transition ' +
-						(activeId === item.id
-							? 'text-[15px] font-semibold underline underline-offset-8 opacity-100'
-							: 'opacity-70 hover:opacity-100')}
+					bind:this={buttonEls[i]}
+					class={'relative z-10 cursor-pointer rounded-lg px-3 py-2 text-sm transition-opacity ' +
+						(activeId === item.id ? 'opacity-100 font-medium' : 'opacity-60 hover:opacity-90')}
 					aria-current={activeId === item.id ? 'page' : undefined}
 					on:click={() => scrollTo(item.id)}
 				>
