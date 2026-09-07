@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Container from '$lib/components/Container.svelte';
+	import SeoMeta from '$lib/components/SeoMeta.svelte';
 	import { locale } from '$lib/i18n/locale';
 	import { en } from '$lib/i18n/dictionaries/en';
 	import { hu } from '$lib/i18n/dictionaries/hu';
@@ -11,10 +12,11 @@
 	$: t = $locale === 'hu' ? hu : en;
 </script>
 
-<svelte:head>
-	<title>{project.title} — Attila Solymosi</title>
-	<meta name="description" content={project.description[$locale]} />
-</svelte:head>
+<SeoMeta
+	title={`${project.title} — Attila Solymosi`}
+	description={project.description[$locale]}
+	path={`/${$locale}/projects/${project.id}`}
+/>
 
 <section class="py-16 max-sm:py-10">
 	<Container>

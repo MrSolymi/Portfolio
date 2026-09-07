@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Container from '$lib/components/Container.svelte';
+	import SeoMeta from '$lib/components/SeoMeta.svelte';
 
 	import Projects from '$lib/sections/Projects.svelte';
 	import Experience from '$lib/sections/Experience.svelte';
@@ -15,10 +16,11 @@
 	$: t = $locale === 'hu' ? hu : en;
 </script>
 
-<svelte:head>
-	<title>Attila Solymosi — {t.hero.identity.role}</title>
-	<meta name="description" content={t.hero.description} />
-</svelte:head>
+<SeoMeta
+	title={`Attila Solymosi — ${t.hero.identity.role}`}
+	description={t.hero.description}
+	path={`/${$locale}`}
+/>
 
 <section id="about" class="scroll-mt-14 lg:scroll-mt-0">
 	<Intro />
