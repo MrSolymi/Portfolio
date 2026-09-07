@@ -87,7 +87,7 @@ export const hu: Dictionary = {
 	experience: {
 		eyebrow: 'Pályafutás',
 		title: 'Tapasztalat',
-		subtitle: 'Rövid idővonal a legfontosabb projektekről és szerepekről - a hangsúly mindig az eredményeken van.',
+		subtitle: 'Rövid idővonal a legfontosabb projektekről és szerepekről',
 		keyAchievements: 'Legfontosabb eredmények',
 		stackLabel: 'Technológiák'
 	},
