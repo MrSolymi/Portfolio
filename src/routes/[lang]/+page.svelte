@@ -28,12 +28,12 @@
 	<Container><Projects /></Container>
 </section>
 
-<section id="education" class="scroll-mt-14 py-16 max-sm:py-10 lg:scroll-mt-0">
-	<Container><Education /></Container>
-</section>
-
 <section id="experience" class="scroll-mt-14 py-16 max-sm:py-10 lg:scroll-mt-0">
 	<Container><Experience /></Container>
+</section>
+
+<section id="education" class="scroll-mt-14 py-16 max-sm:py-10 lg:scroll-mt-0">
+	<Container><Education /></Container>
 </section>
 
 <section id="skills" class="scroll-mt-14 py-16 max-sm:py-10 lg:scroll-mt-0">

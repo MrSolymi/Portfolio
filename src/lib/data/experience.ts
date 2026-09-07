@@ -14,6 +14,75 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
 	{
+		id: 'bmw-group',
+		title: { en: 'Maintenance Technician', hu: 'Karbantartó technikus' },
+		org: 'BMW Group',
+		period: '2026 - Present',
+		location: 'Debrecen, HU',
+		summary: {
+			en: "A maintenance technician role at BMW Group's plant in Debrecen - good communication and teamwork on the floor, and a solid opportunity to keep learning new things outside of software.",
+			hu: 'Karbantartó technikusi szerep a BMW Group debreceni gyárában - jó kommunikáció és csapatmunka a gyártásban, és remek lehetőség új dolgok tanulására a szoftverfejlesztésen kívül is.'
+		},
+		achievements: [
+			{
+				en: 'Strong day-to-day communication and coordination with the team',
+				hu: 'Erős napi kommunikáció és együttműködés a csapattal'
+			},
+			{
+				en: 'Close teamwork in a fast-paced production environment',
+				hu: 'Szoros csapatmunka egy gyors tempójú gyártási környezetben'
+			},
+			{
+				en: 'A good opportunity to keep learning new things outside of software development',
+				hu: 'Jó lehetőség új dolgok tanulására a szoftverfejlesztésen kívül is'
+			}
+		],
+		stack: ['Communication', 'Teamwork']
+	},
+	{
+		id: 'my-projects',
+		title: { en: 'Full-stack Developer', hu: 'Full-stack fejlesztő' },
+		org: 'Personal Projects',
+		period: '2023 - Present',
+		location: 'Hungary / Remote',
+		summary: {
+			en: 'Backend-focused projects with Spring Boot, Svelte frontend integration, and Dockerized environments.',
+			hu: 'Backend-fókuszú projektek Spring Boot-tal, Svelte frontend integrációval és dockerizált környezetekkel.'
+		},
+		achievements: [
+			{
+				en: 'Designed and implemented REST APIs with validation and consistent error handling',
+				hu: 'REST API-k tervezése és megvalósítása validációval és egységes hibakezeléssel'
+			},
+			{
+				en: 'Built session-based authentication and end-to-end auth flows',
+				hu: 'Session-alapú autentikáció és teljes bejelentkezési folyamatok kiépítése'
+			},
+			{
+				en: 'Set up Docker Compose environments for local and production-like workflows',
+				hu: 'Docker Compose környezetek beállítása helyi és éleshez hasonló munkafolyamatokhoz'
+			}
+		],
+		stack: [
+			'Java',
+			'Spring Boot',
+			'C#',
+			'.NET',
+			'Svelte',
+			'TypeScript',
+			'Vue',
+			'Tailwind CSS',
+			'Python',
+			'Docker',
+			'SQL',
+			'Postgres',
+			'AI',
+			'Git',
+			'CloudFlare'
+		],
+		links: [{ label: 'GitHub', href: 'https://github.com/MrSolymi' }]
+	},
+	{
 		id: 'masala-web',
 		title: { en: 'Web Developer (SvelteKit)', hu: 'Webfejlesztő (SvelteKit)' },
 		org: 'Masala Garden',
@@ -65,34 +134,8 @@ export const experience: ExperienceItem[] = [
 				hu: 'Importálási folyamat: feldolgozás → normalizálás → duplikátumszűrés'
 			}
 		],
-		stack: ['C#', 'WPF', 'MVVM', 'SQLite', 'OAuth 2.0', 'Google Cloud Console']
-	},
-	{
-		id: 'my-projects',
-		title: { en: 'Full-stack Developer', hu: 'Full-stack fejlesztő' },
-		org: 'Personal Projects',
-		period: '2023 - Present',
-		location: 'Hungary / Remote',
-		summary: {
-			en: 'Backend-focused projects with Spring Boot, Svelte frontend integration, and Dockerized environments.',
-			hu: 'Backend-fókuszú projektek Spring Boot-tal, Svelte frontend integrációval és dockerizált környezetekkel.'
-		},
-		achievements: [
-			{
-				en: 'Designed and implemented REST APIs with validation and consistent error handling',
-				hu: 'REST API-k tervezése és megvalósítása validációval és egységes hibakezeléssel'
-			},
-			{
-				en: 'Built session-based authentication and end-to-end auth flows',
-				hu: 'Session-alapú autentikáció és teljes bejelentkezési folyamatok kiépítése'
-			},
-			{
-				en: 'Set up Docker Compose environments for local and production-like workflows',
-				hu: 'Docker Compose környezetek beállítása helyi és éleshez hasonló munkafolyamatokhoz'
-			}
-		],
-		stack: ['Java', 'Spring Boot', 'Svelte', 'Docker', 'SQL'],
-		links: [{ label: 'GitHub', href: 'https://github.com/MrSolymi' }]
+		stack: ['C#', 'WPF', 'MVVM', 'SQLite', 'OAuth 2.0', 'Google Cloud Console'],
+		links: [{ label: 'GitHub', href: 'https://github.com/MrSolymi/ContactManager' }]
 	},
 	{
 		id: 'ik-hok-comm',

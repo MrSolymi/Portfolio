@@ -4,8 +4,8 @@ import { browser } from '$app/environment';
 export const sectionIds = [
 	'about',
 	'projects',
-	'education',
 	'experience',
+	'education',
 	'skills',
 	'certifications'
 ] as const;
