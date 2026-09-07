@@ -2,12 +2,17 @@
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
 	import { education } from '$lib/data/education';
 	import { reveal } from '$lib/actions/reveal';
+	import { locale } from '$lib/i18n/locale';
+	import { en } from '$lib/i18n/dictionaries/en';
+	import { hu } from '$lib/i18n/dictionaries/hu';
+
+	$: t = $locale === 'hu' ? hu : en;
 </script>
 
 <SectionTitle
-	eyebrow="Education"
-	title="Education"
-	subtitle="University and other relevant educational experiences."
+	eyebrow={t.education.eyebrow}
+	title={t.education.title}
+	subtitle={t.education.subtitle}
 />
 
 <div class="relative">
@@ -34,7 +39,7 @@
 				<div class="card-accent glass-hover rounded-2xl p-4 sm:p-6">
 					<header class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 						<div>
-							<h3 class="text-lg font-semibold tracking-tight leading-snug">{e.degree}</h3>
+							<h3 class="text-lg font-semibold tracking-tight leading-snug">{e.degree[$locale]}</h3>
 							<p class="mt-1 text-sm opacity-70">
 								<span class="font-medium opacity-90">{e.school}</span>
 								{#if e.location}<span class="opacity-50"> • {e.location}</span>{/if}
@@ -46,10 +51,10 @@
 
 					{#if e.details?.length}
 						<ul class="mt-4 sm:mt-5 space-y-1.5 sm:space-y-2">
-							{#each e.details as d}
+							{#each e.details as d (d.en)}
 								<li class="flex gap-2 text-sm opacity-75">
 									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style="background: color-mix(in oklab, var(--primary) 70%, transparent);"></span>
-									<span>{d}</span>
+									<span>{d[$locale]}</span>
 								</li>
 							{/each}
 						</ul>

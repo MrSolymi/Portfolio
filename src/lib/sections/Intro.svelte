@@ -2,10 +2,16 @@
 	import { onMount } from 'svelte';
 	import Container from '$lib/components/Container.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { contact } from '$lib/data/profile';
+	import { locale } from '$lib/i18n/locale';
+	import { en } from '$lib/i18n/dictionaries/en';
+	import { hu } from '$lib/i18n/dictionaries/hu';
 	import {
 		siSpringboot, siPostgresql, siDocker, siGit, siDotnet,
 		siSvelte, siTypescript, siLinux, siGithub, siPython, siSqlite, siTailwindcss
 	} from 'simple-icons';
+
+	$: t = $locale === 'hu' ? hu : en;
 
 	const techStack = [
 		{ icon: siSpringboot },
@@ -24,29 +30,17 @@
 
 	const featuredStack = ['Java', 'Spring Boot', 'Docker', 'PostgreSQL', 'Svelte', 'TypeScript', 'C#', 'Linux'];
 
-	const quick = [
-		{ title: 'Backend & API', text: 'Spring Boot REST APIs with thoughtful validation, consistent error responses, and tidy endpoint design.' },
-		{ title: 'Full-stack mindset', text: 'Frontend-friendly APIs, auth flows, and backend decisions that make the UI feel smoother.' },
-		{ title: 'DevOps basics', text: 'Docker / Compose, repeatable environments, and simple deploy workflows' }
-	];
-
-	const bullets = [
-		'Collaborative mindset, clear communication',
-		'I care about clean code',
-		'Creative problem solving'
+	$: quick = [
+		{ title: t.about.quick1Title, text: t.about.quick1Text },
+		{ title: t.about.quick2Title, text: t.about.quick2Text },
+		{ title: t.about.quick3Title, text: t.about.quick3Text }
 	];
 
 	let projectsCount = 0;
 	let statsVisible = false;
 	let statsEl: HTMLElement;
 
-	const phrases = [
-		'Backend • Java • Spring Boot',
-		'Python • REST • Clean APIs',
-		'Full-Stack • Svelte • TypeScript',
-		'DevOps • Docker • Linux',
-		'C# • .NET • WPF'
-	];
+	$: phrases = t.hero.typewriterPhrases;
 	let displayed = '';
 	let phraseIndex = 0;
 	let phraseDir = 1;
@@ -87,9 +81,9 @@
 	function animateCount(from: number, to: number, duration: number, setter: (v: number) => void) {
 		const start = performance.now();
 		function step(now: number) {
-			const t = Math.min((now - start) / duration, 1);
-			setter(Math.round(from + (to - from) * (1 - Math.pow(1 - t, 3))));
-			if (t < 1) requestAnimationFrame(step);
+			const progress = Math.min((now - start) / duration, 1);
+			setter(Math.round(from + (to - from) * (1 - Math.pow(1 - progress, 3))));
+			if (progress < 1) requestAnimationFrame(step);
 		}
 		requestAnimationFrame(step);
 	}
@@ -106,7 +100,7 @@
 					<!-- Badge -->
 					<div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs backdrop-blur">
 						<span class="dot-live"></span>
-						Available for work
+						{t.hero.badgeAvailable}
 					</div>
 
 					<!-- Typewriter -->
@@ -116,30 +110,30 @@
 
 					<!-- Headline -->
 					<h1 class="gradient-text mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-						I like building services that don't wake you up at&nbsp;2&nbsp;AM.
+						{t.hero.headline}
 					</h1>
 
 					<!-- Description -->
 					<p class="mt-5 text-sm leading-relaxed opacity-70 sm:text-base">
-						Spring Boot APIs, clean structure, and practical decisions over overengineering.
-						Reliable integrations, predictable deployments, readable code.
+						{t.hero.description}
 					</p>
 
 					<!-- CTAs -->
 					<div class="mt-7 flex flex-col gap-3 sm:flex-row">
 						<a href="#projects" class="btn-primary w-full cursor-pointer rounded-xl border px-5 py-3 text-center text-sm font-medium sm:w-auto">
-							View Projects
+							{t.hero.ctaProjects}
 						</a>
-						<a href="#contact" class="btn-glass w-full cursor-pointer rounded-xl border px-5 py-3 text-center text-sm font-medium sm:w-auto">
-							Get in touch
+						<a href={'mailto:' + contact.email} class="btn-glass w-full cursor-pointer rounded-xl border px-5 py-3 text-center text-sm font-medium sm:w-auto">
+							{t.hero.ctaContact}
 						</a>
 					</div>
 
 					<!-- Icon marquee -->
 					<div class="marquee-track mt-8 py-1" aria-hidden="true">
 						<div class="marquee-inner" style="gap: 2.25rem; animation: marquee-fwd 26s linear infinite;">
-							{#each [...techStack, ...techStack] as tech}
-								<svg viewBox="0 0 24 24" class="h-6 w-6 shrink-0" fill={'color' in tech ? tech.color : '#' + tech.icon.hex} style="opacity:0.65" title={tech.icon.title}>
+							{#each [...techStack, ...techStack] as tech, i (i)}
+								<svg viewBox="0 0 24 24" class="h-6 w-6 shrink-0" fill={'color' in tech ? tech.color : '#' + tech.icon.hex} style="opacity:0.65">
+									<title>{tech.icon.title}</title>
 									<path d={tech.icon.path} />
 								</svg>
 							{/each}
@@ -160,14 +154,14 @@
 							</div>
 							<div>
 								<p class="text-lg font-semibold" style="font-family:'Space Grotesk',sans-serif;">Attila Solymosi</p>
-								<p class="mt-0.5 text-sm opacity-60">Backend / Full-stack Developer</p>
+								<p class="mt-0.5 text-sm opacity-60">{t.hero.identity.role}</p>
 							</div>
 							<div class="flex flex-wrap justify-center gap-2">
 								<span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs backdrop-blur">
-									<span class="dot-live"></span>Open to work
+									<span class="dot-live"></span>{t.hero.identity.openToWork}
 								</span>
 								<span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs opacity-70 backdrop-blur">
-									Debrecen / Remote
+									{t.hero.identity.locationBadge}
 								</span>
 							</div>
 						</div>
@@ -181,15 +175,15 @@
 								<p class="text-2xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:var(--accent-cyan);">
 									{statsVisible ? projectsCount + '+' : '5+'}
 								</p>
-								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">Projects</p>
+								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">{t.hero.identity.statsProjectsLabel}</p>
 							</div>
 							<div>
 								<p class="text-2xl font-bold" style="font-family:'Space Grotesk',sans-serif;color:var(--accent-cyan);">2025</p>
-								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">Graduate</p>
+								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">{t.hero.identity.statsGraduateLabel}</p>
 							</div>
 							<div>
-								<p class="text-lg font-bold" style="font-family:'Space Grotesk',sans-serif;color:var(--accent-cyan);">Backend</p>
-								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">Focused</p>
+								<p class="text-lg font-bold" style="font-family:'Space Grotesk',sans-serif;color:var(--accent-cyan);">{t.hero.identity.statsFocusValue}</p>
+								<p class="mt-1 text-xs uppercase tracking-wider opacity-50">{t.hero.identity.statsFocusLabel}</p>
 							</div>
 						</div>
 
@@ -198,9 +192,9 @@
 
 						<!-- Top stack -->
 						<div>
-							<p class="mb-3 text-xs font-medium uppercase tracking-widest opacity-40">Top stack</p>
+							<p class="mb-3 text-xs font-medium uppercase tracking-widest opacity-40">{t.hero.identity.topStackLabel}</p>
 							<div class="flex flex-wrap gap-2">
-								{#each featuredStack as s}
+								{#each featuredStack as s (s)}
 									<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-70">{s}</span>
 								{/each}
 							</div>
@@ -214,20 +208,15 @@
 		<!-- ── ABOUT ─────────────────────────────────────────────── -->
 		<div class="grid items-start gap-6 sm:gap-8 lg:grid-cols-2">
 			<div class="card-accent glass-hover rounded-2xl p-5 sm:p-7" use:reveal={{ delay: 0 }}>
-				<p class="text-xs font-medium uppercase tracking-widest opacity-50">About me</p>
-				<h2 class="mt-2 text-2xl font-semibold tracking-tight">Who am I?</h2>
+				<p class="text-xs font-medium uppercase tracking-widest opacity-50">{t.about.eyebrow}</p>
+				<h2 class="mt-2 text-2xl font-semibold tracking-tight">{t.about.title}</h2>
 				<p class="mt-4 text-sm leading-relaxed opacity-75">
-					I'm Attila Solymosi, a software developer. I earned my BSc in Computer Science (Software
-					Engineering) at the University of Debrecen in 2025. These days I'm mostly working on
-					Spring Boot backend applications.
+					{t.about.bioPart1}
 					<br /><br />
-					I enjoy collaborative work, discussing trade-offs, pairing when it speeds things up, and keeping
-					communication clear so progress stays steady. I'm also comfortable contributing to the creative
-					side, from UX tweaks with the frontend to quick prototypes for new ideas. Outside backend, I
-					have experience with C#/.NET and I've been working with Unity as part of my university thesis project.
+					{t.about.bioPart2}
 				</p>
 				<ul class="mt-5 space-y-2">
-					{#each bullets as b}
+					{#each t.about.bullets as b (b)}
 						<li class="flex gap-2 text-sm opacity-80">
 							<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style="background:var(--accent-cyan);"></span>
 							<span>{b}</span>
@@ -244,9 +233,9 @@
 					</div>
 				{/each}
 				<div class="card-accent glass-hover rounded-2xl p-5 sm:p-6" use:reveal={{ delay: 240 }}>
-					<p class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;">Currently</p>
+					<p class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;">{t.about.currentlyTitle}</p>
 					<p class="mt-2 text-sm leading-relaxed opacity-70">
-						Open to backend or full-stack opportunities where I can build reliable systems and keep improving them.
+						{t.about.currentlyText}
 					</p>
 				</div>
 			</div>

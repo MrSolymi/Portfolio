@@ -2,12 +2,17 @@
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
 	import { experience } from '$lib/data/experience';
 	import { reveal } from '$lib/actions/reveal';
+	import { locale } from '$lib/i18n/locale';
+	import { en } from '$lib/i18n/dictionaries/en';
+	import { hu } from '$lib/i18n/dictionaries/hu';
+
+	$: t = $locale === 'hu' ? hu : en;
 </script>
 
 <SectionTitle
-	eyebrow="Career"
-	title="Experience"
-	subtitle="Short timeline of the most important projects / roles, with focus on results."
+	eyebrow={t.experience.eyebrow}
+	title={t.experience.title}
+	subtitle={t.experience.subtitle}
 />
 
 <div class="relative">
@@ -34,21 +39,21 @@
 				<div class="card-accent glass-hover rounded-2xl p-4 sm:p-6">
 					<header class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 						<div>
-							<h3 class="text-lg leading-snug font-semibold tracking-tight">{item.title}</h3>
+							<h3 class="text-lg leading-snug font-semibold tracking-tight">{item.title[$locale]}</h3>
 							<p class="mt-1 text-sm opacity-70">
 								<span class="font-medium opacity-90">{item.org}</span>
 								{#if item.location}
 									<span class="opacity-50"> • {item.location}</span>
 								{/if}
 							</p>
-							<p class="mt-3 max-w-2xl text-sm leading-relaxed opacity-65">{item.summary}</p>
+							<p class="mt-3 max-w-2xl text-sm leading-relaxed opacity-65">{item.summary[$locale]}</p>
 						</div>
 
 						<div class="shrink-0 text-xs sm:text-right sm:text-sm">
 							<p class="font-medium" style="color: var(--accent-cyan);">{item.period}</p>
 							{#if item.links?.length}
 								<div class="mt-2 flex gap-3 sm:justify-end">
-									{#each item.links as l}
+									{#each item.links as l (l.href)}
 										<a
 											class="underline opacity-70 hover:opacity-100"
 											href={l.href}
@@ -65,21 +70,21 @@
 
 					<div class="mt-4 grid gap-5 sm:mt-5 sm:gap-6 lg:grid-cols-3">
 						<section class="lg:col-span-2">
-							<p class="text-xs font-medium opacity-50 uppercase tracking-wider">Key achievements</p>
+							<p class="text-xs font-medium opacity-50 uppercase tracking-wider">{t.experience.keyAchievements}</p>
 							<ul class="mt-2 space-y-1.5 sm:mt-3 sm:space-y-2">
-								{#each item.achievements as a}
+								{#each item.achievements as a (a.en)}
 									<li class="flex gap-2 text-sm opacity-75">
 										<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style="background: color-mix(in oklab, var(--primary) 70%, transparent);"></span>
-										<span>{a}</span>
+										<span>{a[$locale]}</span>
 									</li>
 								{/each}
 							</ul>
 						</section>
 
 						<section>
-							<p class="text-xs font-medium opacity-50 uppercase tracking-wider">Stack</p>
+							<p class="text-xs font-medium opacity-50 uppercase tracking-wider">{t.experience.stackLabel}</p>
 							<div class="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
-								{#each item.stack as s}
+								{#each item.stack as s (s)}
 									<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-75">{s}</span>
 								{/each}
 							</div>

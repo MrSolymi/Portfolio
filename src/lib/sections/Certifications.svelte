@@ -2,12 +2,17 @@
 	import SectionTitle from '$lib/components/SectionTitle.svelte';
 	import { certifications } from '$lib/data/certifications';
 	import { reveal } from '$lib/actions/reveal';
+	import { locale } from '$lib/i18n/locale';
+	import { en } from '$lib/i18n/dictionaries/en';
+	import { hu } from '$lib/i18n/dictionaries/hu';
+
+	$: t = $locale === 'hu' ? hu : en;
 </script>
 
 <SectionTitle
-	eyebrow="Credentials"
-	title="Certifications"
-	subtitle="Relevant certifications and verifiable credentials."
+	eyebrow={t.certifications.eyebrow}
+	title={t.certifications.title}
+	subtitle={t.certifications.subtitle}
 />
 
 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -25,15 +30,15 @@
 
 			{#if c.tags?.length}
 				<div class="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
-					{#each c.tags as t}
-						<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-80">{t}</span>
+					{#each c.tags as tag (tag)}
+						<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-80">{tag}</span>
 					{/each}
 				</div>
 			{/if}
 
 			{#if c.credentialId}
 				<p class="mt-4 text-sm break-all opacity-80">
-					<span class="opacity-60">Credential ID:</span>
+					<span class="opacity-60">{t.certifications.credentialIdLabel}</span>
 					{c.credentialId}
 				</p>
 			{/if}
@@ -46,7 +51,7 @@
 						target="_blank"
 						rel="noreferrer"
 					>
-						View credential
+						{t.certifications.viewCredential}
 					</a>
 				</div>
 			{/if}

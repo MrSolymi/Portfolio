@@ -2,9 +2,13 @@
 	import type { Project } from '$lib/data/projects';
 	import { reveal } from '$lib/actions/reveal';
 	import { tilt } from '$lib/actions/tilt';
+	import { locale } from '$lib/i18n/locale';
+	import { en } from '$lib/i18n/dictionaries/en';
+	import { hu } from '$lib/i18n/dictionaries/hu';
 
 	export let project: Project;
-	export let onOpenCaseStudy: ((p: Project) => void) | null = null;
+
+	$: t = $locale === 'hu' ? hu : en;
 </script>
 
 <article
@@ -21,21 +25,21 @@
 				class="text-lg leading-snug font-semibold tracking-tight"
 				style="font-family: 'Space Grotesk', sans-serif;"
 			>{project.title}</h3>
-			<p class="mt-2 text-sm opacity-70">{project.description}</p>
+			<p class="mt-2 text-sm opacity-70">{project.description[$locale]}</p>
 		</div>
 	</header>
 
 	<div class="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
-		{#each project.tags as tag}
+		{#each project.tags as tag (tag)}
 			<span class="glass pill-hover rounded-full border px-2.5 py-1 text-xs opacity-75">{tag}</span>
 		{/each}
 	</div>
 
 	<ul class="mt-5 space-y-2">
-		{#each project.highlights.slice(0, 3) as h}
+		{#each project.highlights.slice(0, 3) as h (h.en)}
 			<li class="flex gap-2 text-sm opacity-70">
 				<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style="background: color-mix(in oklab, var(--primary) 70%, transparent);"></span>
-				<span>{h}</span>
+				<span>{h[$locale]}</span>
 			</li>
 		{/each}
 	</ul>
@@ -48,7 +52,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				GitHub
+				{t.projects.githubLink}
 			</a>
 		{/if}
 
@@ -59,18 +63,17 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				Live
+				{t.projects.liveLink}
 			</a>
 		{/if}
 
-		{#if project.links?.caseStudy && onOpenCaseStudy}
-			<button
+		{#if project.links?.caseStudy}
+			<a
 				class="btn-primary cursor-pointer rounded-lg border px-3 py-2 text-sm"
-				type="button"
-				on:click={() => onOpenCaseStudy?.(project)}
+				href="/{$locale}/projects/{project.id}"
 			>
-				Case study
-			</button>
+				{t.projects.caseStudyButton}
+			</a>
 		{/if}
 	</footer>
 </article>
