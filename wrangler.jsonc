@@ -4,5 +4,9 @@
 	"assets": {
 		"directory": "build",
 		"not_found_handling": "single-page-application"
-	}
+	},
+	"workers_dev": false,
+	"routes": [
+		{ "pattern": "portfolio.mrsolymi.me", "custom_domain": true }
+	]
 }
